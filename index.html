@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siberia War Room Executive — One-Pager</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:   #0A0A0A;
+    --card:    #2C2C2C;
+    --ice:     #F4F4F0;
+    --amber:   #C8922A;
+    --muted:   #8A8A8A;
+    --border:  rgba(138,138,138,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--ice);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 52px;
+  }
+
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .inst-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 82px;
+    font-weight: 900;
+    line-height: 0.88;
+    color: var(--ice);
+    letter-spacing: -1px;
+  }
+
+  .brand-title .amber { color: var(--amber); }
+
+  .header-right { text-align: right; }
+
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ice);
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .sub-tag {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .conf-bar {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  /* ── PRODUCTS ── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .product-card {
+    background: var(--card);
+    padding: 36px 32px 32px;
+    position: relative;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--border);
+  }
+
+  .product-card.force::before { background: var(--amber); }
+
+  .p-type {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .p-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--ice);
+    margin-bottom: 4px;
+  }
+
+  .p-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+
+  .price-area {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .price-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .price-note {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .mkt-ref {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .mkt-ref span { color: var(--ice); font-weight: 500; }
+
+  .del-list { list-style: none; }
+
+  .del-list li {
+    display: flex;
+    gap: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    align-items: flex-start;
+    font-size: 12.5px;
+    color: var(--ice);
+  }
+
+  .del-list li:last-child { border-bottom: none; }
+
+  .dm { color: var(--muted); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
+  .force .dm.plus { color: var(--amber); }
+
+  .db { line-height: 1.45; }
+  .dn { display: block; font-size: 10.5px; color: var(--muted); font-style: italic; margin-top: 2px; }
+
+  .hybria-note {
+    background: rgba(200,146,42,0.07);
+    border-left: 2px solid var(--amber);
+    padding: 12px 16px;
+    margin-top: 20px;
+    font-size: 11.5px;
+    color: var(--ice);
+    font-style: italic;
+    line-height: 1.65;
+  }
+
+  /* ── ADD-ON ── */
+  .addon-row {
+    background: var(--card);
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 48px;
+    border-top: 2px solid rgba(200,146,42,0.25);
+    margin-bottom: 2px;
+  }
+
+  .addon-badge {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .addon-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ice);
+    margin-bottom: 6px;
+  }
+
+  .addon-desc {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    max-width: 480px;
+    line-height: 1.65;
+  }
+
+  .addon-price-col { text-align: right; flex-shrink: 0; }
+
+  .addon-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .addon-bundle { font-size: 10px; color: var(--muted); line-height: 2; }
+
+  /* ── PRICING TABLE ── */
+  .pricing-wrap { margin: 48px 0; }
+
+  .pricing-table { width: 100%; border-collapse: collapse; }
+
+  .pricing-table th {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: #111;
+  }
+
+  .pricing-table th:not(:first-child) { text-align: center; }
+
+  .pricing-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+
+  .pricing-table td:not(:first-child) { text-align: center; }
+  .pricing-table tr:last-child td { border-bottom: none; }
+
+  .t-prod {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ice);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .t-sub { font-size: 10px; color: var(--muted); font-style: italic; }
+
+  .t-phase {
+    display: block;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .t-ea { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--amber); }
+  .t-fo { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--ice); opacity: 0.55; }
+  .t-de { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--muted); }
+
+  .t-econ td {
+    background: rgba(200,146,42,0.05);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--amber);
+    letter-spacing: 0.04em;
+  }
+
+  .vagas {
+    display: inline-block;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ── BOTTOM GRID ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 2px;
+  }
+
+  .info-card { background: var(--card); padding: 32px; }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ice);
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .funnel-list { list-style: none; }
+
+  .funnel-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 12px;
+  }
+
+  .funnel-list li:last-child { border-bottom: none; }
+
+  .f-step { font-size: 9px; color: var(--muted); width: 20px; flex-shrink: 0; }
+  .f-name { color: var(--ice); flex: 1; line-height: 1.4; }
+  .f-price { font-size: 10.5px; color: var(--muted); font-weight: 500; text-align: right; white-space: nowrap; }
+  .f-conn { padding: 2px 0 2px 32px; font-size: 10px; color: #3a3a3a; font-style: italic; }
+
+  .icp-list { list-style: none; }
+
+  .icp-list li {
+    display: flex;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 12px;
+    color: var(--ice);
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .icp-list li:last-child { border-bottom: none; }
+  .icp-m { color: var(--muted); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
+
+  .script-block { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
+
+  .script-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  .script-text strong { color: var(--amber); font-style: normal; }
+
+  /* ── ANCHOR ── */
+  .anchor-card {
+    background: var(--card);
+    padding: 40px;
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .anchor-list { list-style: none; }
+
+  .anchor-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 12px;
+    color: var(--ice);
+    gap: 24px;
+  }
+
+  .anchor-list li:last-child { border-bottom: none; }
+  .anchor-val { font-size: 11px; color: var(--muted); font-weight: 500; white-space: nowrap; }
+
+  .anchor-total { text-align: right; min-width: 210px; }
+
+  .anchor-mkt-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .anchor-mkt { font-family: 'Playfair Display', serif; font-size: 58px; font-weight: 900; color: var(--amber); line-height: 1; letter-spacing: -1px; }
+
+  .anchor-pay-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-top: 18px; margin-bottom: 6px; }
+  .anchor-pay { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--ice); line-height: 1; }
+
+  .anchor-divider { width: 36px; height: 1px; background: var(--border); margin: 12px 0 12px auto; }
+  .anchor-roi { font-size: 11px; color: var(--muted); margin-top: 10px; font-style: italic; }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-left { font-size: 9px; font-weight: 400; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; line-height: 2; }
+
+  .footer-right {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .footer-right cite { display: block; font-size: 10px; font-style: normal; color: #444; margin-top: 4px; letter-spacing: 0.1em; }
+
+  .gap { height: 2px; background: var(--black); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="inst-label">Siberia Institute · Executive Division</div>
+      <div class="brand-title serif">WAR<br>ROOM<br><span class="amber">EXEC.</span></div>
+    </div>
+    <div class="header-right">
+      <div class="tagline">"Board-level decisions.<br>War-room speed."</div>
+      <div class="sub-tag">
+        1 ano de estrategia em 72H<br>
+        AI-First, sem hype<br>
+        + Equipe AI-First
+      </div>
+    </div>
+  </header>
+
+  <div class="conf-bar">Confidencial · Uso Exclusivo do Closer · Cohort Inaugural · Marco 2026</div>
+
+  <!-- PRODUTOS -->
+  <div class="section-header"><span class="label">01 · Produtos</span></div>
+
+  <div class="products-grid">
+
+    <div class="product-card core">
+      <div class="p-type">War Room · Modelo 01</div>
+      <div class="p-name serif">Core</div>
+      <div class="p-sub">Imersao · Founder + C-Level · Presencial</div>
+      <div class="price-area">
+        <div class="price-main">12x R$4.990</div>
+        <div class="price-note">Early-Adopter · Cohort Inaugural · 5 vagas</div>
+        <div class="mkt-ref">Valor de mercado: <span>R$178.000</span></div>
+      </div>
+      <ul class="del-list">
+        <li><span class="dm">—</span><span class="db">IMA A1 + A2 — Diagnostico + leitura calibrada com Vagner</span></li>
+        <li><span class="dm">—</span><span class="db">Causa-Raiz + QUEST — Mapa de problema validado e documentado</span></li>
+        <li><span class="dm">—</span><span class="db">DNA Estrategico 72H — McKinsey-level · ativo permanente da empresa</span></li>
+        <li><span class="dm">—</span><span class="db">Inteligencia Estrategica de Mercado — Benchmark setorial com dados reais</span></li>
+        <li><span class="dm">—</span><span class="db">Posicionamento Estrategico — Declaracao unica assinada</span></li>
+        <li><span class="dm">—</span><span class="db">Matriz Persuasiva Estrategica — Copy por canal · ICP · mensagem · proposta</span></li>
+        <li><span class="dm">—</span><span class="db">Estrutura de Vendas Cientifica — Pipeline com gatilhos e scripts</span></li>
+        <li><span class="dm">—</span><span class="db">Plano AI-First 90 dias — Owners + metricas + dashboard vivo</span></li>
+        <li><span class="dm">—</span><span class="db">Hybria · 250 oportunidades trabalhadas<span class="dn">Configurada com o DNA das 72H · opera sem o founder presente</span></span></li>
+        <li><span class="dm">—</span><span class="db">Boardroom Presencial de Encerramento — Sessao de decisao de board-level</span></li>
+      </ul>
+    </div>
+
+    <div class="product-card force">
+      <div class="p-type">War Room · Modelo 02</div>
+      <div class="p-name serif">Full Force</div>
+      <div class="p-sub">Crew · Founder + Time AI-First · Presencial</div>
+      <div class="price-area">
+        <div class="price-main">12x R$7.990</div>
+        <div class="price-note">Early-Adopter · Cohort Inaugural · 5 vagas</div>
+        <div class="mkt-ref">Valor de mercado: <span>R$213.000</span></div>
+      </div>
+      <ul class="del-list">
+        <li><span class="dm" style="color:var(--muted);font-style:italic;font-size:11px;width:100%;display:block;padding-bottom:4px;">Tudo do Core, mais:</span></li>
+        <li><span class="dm plus">+</span><span class="db">GTM AI Engineering · 1 Chair<span class="dn">Extensao universitaria · Chancela MEC · R$23.000 separado</span></span></li>
+        <li><span class="dm plus">+</span><span class="db">Productivity OS — Fluenc[IA] / Eng. Contexto / Escala · 3 Chairs<span class="dn">Extensao universitaria · Chancela MEC · 3 colaboradores · R$4.000 cada · R$12.000 bundle</span></span></li>
+        <li><span class="dm plus">+</span><span class="db">3 colaboradores saem das 72H operando com agentes e prompts avancados</span></li>
+        <li><span class="dm plus">+</span><span class="db">Head de GTM com arquitetura de go-to-market e RevOps implementado</span></li>
+        <li><span class="dm plus">+</span><span class="db">Time alinhado ao DNA no mesmo ciclo em que o founder constroi a estrategia</span></li>
+      </ul>
+      <div class="hybria-note">
+        Hybria · 250 oportunidades trabalha sem parar apos as 72H. Configurada sobre o DNA da empresa. Uma venda fechada ja paga o investimento.
+      </div>
+    </div>
+  </div>
+
+  <div class="gap"></div>
+  <div class="addon-row">
+    <div>
+      <div class="addon-badge">Add-on · Extensao Universitaria · Chancela MEC</div>
+      <div class="addon-name serif">Pos-Graduacao</div>
+      <div class="addon-desc">"O War Room define onde a empresa vai. A Pos forma quem vai conduzir." Certificado reconhecido por instituicao parceira com chancela MEC.</div>
+    </div>
+    <div class="addon-price-col">
+      <div class="addon-price">R$25.000</div>
+      <div class="addon-bundle">
+        Bundle Full Force + Pos: <span style="color:var(--ice);font-weight:500;">R$99.000</span><br>
+        <span style="color:var(--amber);">Economia R$1.000 vs. separado</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING TABLE -->
+  <div class="pricing-wrap">
+    <div class="section-header"><span class="label">02 · Evolucao de Preco · Early-Adopter ate Definitivo</span></div>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Early-Adopter <span class="vagas">5 vagas</span></th>
+          <th>Fundador · Cohort 2-3</th>
+          <th>Definitivo · Cohort 4+</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="t-prod serif">War Room Core</span><span class="t-sub">Imersao · founder + C-level</span></td>
+          <td><span class="t-phase">Agora · 30 dias</span><div class="t-ea">12x R$4.990</div></td>
+          <td><span class="t-phase">Meses 2-4</span><div class="t-fo">12x R$5.990</div></td>
+          <td><span class="t-phase">Mes 5+</span><div class="t-de">12x R$7.490</div></td>
+        </tr>
+        <tr>
+          <td><span class="t-prod serif">War Room Full Force</span><span class="t-sub">Crew · founder + time AI-First</span></td>
+          <td><span class="t-phase">Agora · 30 dias</span><div class="t-ea">12x R$7.990</div></td>
+          <td><span class="t-phase">Meses 2-4</span><div class="t-fo">12x R$9.490</div></td>
+          <td><span class="t-phase">Mes 5+</span><div class="t-de">12x R$11.990</div></td>
+        </tr>
+        <tr>
+          <td><span class="t-prod serif">Bundle Full Force + Pos</span><span class="t-sub">Stack completo · MEC incluso</span></td>
+          <td><span class="t-phase">Agora · 30 dias</span><div class="t-ea">R$99.000</div></td>
+          <td><span class="t-phase">Meses 2-4</span><div class="t-fo">R$118.000</div></td>
+          <td><span class="t-phase">Mes 5+</span><div class="t-de">R$145.000</div></td>
+        </tr>
+        <tr class="t-econ">
+          <td>Economia vs. preco definitivo</td>
+          <td>R$30.000</td>
+          <td>R$16.000</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FUNIL + ICP -->
+  <div class="section-header"><span class="label">03 · Funil e Perfil do Comprador</span></div>
+  <div class="bottom-grid">
+    <div class="info-card">
+      <div class="card-title serif">Funil Completo<br>Siberia</div>
+      <ul class="funnel-list">
+        <li><span class="f-step">01</span><span class="f-name">IMA Digital — Diagnostico de Maturidade AI</span><span class="f-price">Gratuito</span></li>
+        <li class="f-conn">qualifica maturidade AI</li>
+        <li><span class="f-step">02</span><span class="f-name">Diagnostico Digital SaaS — Causa-raiz + QUEST</span><span class="f-price">R$1.500 – R$5.000</span></li>
+        <li class="f-conn">closer conduz calibracao · R$5k abatido no War Room</li>
+        <li><span class="f-step">03</span><span class="f-name">War Room Core — Imersao 72H</span><span class="f-price">12x R$4.990</span></li>
+        <li><span class="f-step">03</span><span class="f-name">War Room Full Force — Crew 72H</span><span class="f-price">12x R$7.990</span></li>
+        <li class="f-conn">bundle com Pos-Graduacao disponivel</li>
+        <li><span class="f-step">04</span><span class="f-name">Pos-Graduacao · Extensao MEC</span><span class="f-price">R$25.000</span></li>
+        <li><span class="f-step">05</span><span class="f-name">Boardroom — Produto separado</span><span class="f-price">A definir</span></li>
+        <li><span class="f-step">06</span><span class="f-name">Council League — Governanca anual</span><span class="f-price">R$120–150k/ano</span></li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-title serif">Perfil do<br>Comprador · ICP</div>
+      <ul class="icp-list">
+        <li><span class="icp-m">—</span>Founder ou CEO · empresa B2B · qualquer segmento</li>
+        <li><span class="icp-m">—</span>5 a 200 funcionarios · faturamento R$5M – R$50M</li>
+        <li><span class="icp-m">—</span>IMA Score N3 ou N4 — Arquiteto ou AI-Native</li>
+        <li><span class="icp-m">—</span>Ja investe em IA. Sem arquitetura. Sem velocidade.</li>
+        <li><span class="icp-m">—</span>Dor: decisao estrategica mais lenta que a complexidade</li>
+        <li><span class="icp-m">—</span>Budget aprovado para aceleracao estrategica</li>
+        <li><span class="icp-m">—</span>Trigger: IMA revelou gargalo critico que bloqueia o proximo nivel</li>
+      </ul>
+      <div class="script-block">
+        <div class="label" style="margin-bottom:12px;">Script · Closer · Early-Adopter</div>
+        <div class="script-text serif">
+          "As primeiras <strong>5 empresas</strong> entram com preco de fundacao.
+          O definitivo a partir do 4o cohort e 12x R$7.490.
+          Fechando agora: <strong>12x R$4.990</strong> — economia real de <strong>R$30.000.</strong>
+          Em troca: seu caso alimenta o Benchmark AI-Native Brasil 2026.
+          Restam [X] vagas. A decisao precisa ser essa semana."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANCHOR -->
+  <div class="gap"></div>
+  <div class="anchor-card">
+    <div>
+      <div class="section-header" style="margin-bottom:20px;"><span class="label">04 · Ancora de Valor · Stack Completo Full Force + Pos</span></div>
+      <ul class="anchor-list">
+        <li><span>DNA Estrategico completo (McKinsey-level)</span><span class="anchor-val">R$150.000</span></li>
+        <li><span>IMA A1 + A2 · diagnostico + calibracao com Vagner</span><span class="anchor-val">R$3.000</span></li>
+        <li><span>Causa-Raiz + QUEST</span><span class="anchor-val">R$15.000</span></li>
+        <li><span>Inteligencia Estrategica de Mercado</span><span class="anchor-val">R$25.000</span></li>
+        <li><span>Posicionamento + Matriz Persuasiva Estrategica</span><span class="anchor-val">R$20.000</span></li>
+        <li><span>Estrutura de Vendas Cientifica</span><span class="anchor-val">R$20.000</span></li>
+        <li><span>Plano AI-First 90 dias documentado</span><span class="anchor-val">R$10.000</span></li>
+        <li><span>GTM AI Engineering · Extensao MEC</span><span class="anchor-val">R$23.000</span></li>
+        <li><span>Productivity OS x 3 · Extensao MEC</span><span class="anchor-val">R$12.000</span></li>
+        <li><span>Pos-Graduacao · Chancela MEC</span><span class="anchor-val">R$25.000</span></li>
+        <li><span>Hybria · 250 oportunidades trabalhadas</span><span class="anchor-val">R$18.000</span></li>
+      </ul>
+    </div>
+    <div class="anchor-total">
+      <div class="anchor-mkt-label">Valor total de mercado</div>
+      <div class="anchor-mkt serif">R$321k</div>
+      <div class="anchor-divider"></div>
+      <div class="anchor-pay-label">Bundle Early-Adopter</div>
+      <div class="anchor-pay serif">R$99.000</div>
+      <div class="anchor-roi">ROI antes de implementar: 3,2x garantido</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      Siberia Institute · War Room Executive · One-Pager v2.0<br>
+      Marco 2026 · Confidencial · Uso interno do closer<br>
+      IMA · Hybria · Council League · Chancela MEC
+    </div>
+    <div class="footer-right serif">
+      "Freedom comes through absolute rigor."
+      <cite>— Vagner Campos, Siberia Institute</cite>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
