@@ -3,696 +3,2573 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siberia War Room Executive — One-Pager</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Council League — Siberia Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --black:   #0A0A0A;
-    --card:    #2C2C2C;
-    --ice:     #F4F4F0;
-    --amber:   #C8922A;
-    --muted:   #8A8A8A;
-    --border:  rgba(138,138,138,0.18);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--black);
-    color: var(--ice);
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .page {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 64px 52px;
-  }
-
-  .serif { font-family: 'Playfair Display', Georgia, serif; }
-
-  .label {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .section-header::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* ── HEADER ── */
-  .header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    gap: 48px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 40px;
-  }
-
-  .inst-label {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 14px;
-  }
-
-  .brand-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 82px;
-    font-weight: 900;
-    line-height: 0.88;
-    color: var(--ice);
-    letter-spacing: -1px;
-  }
-
-  .brand-title .amber { color: var(--amber); }
-
-  .header-right { text-align: right; }
-
-  .tagline {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--ice);
-    line-height: 1.4;
-    margin-bottom: 14px;
-  }
-
-  .sub-tag {
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.9;
-  }
-
-  .conf-bar {
-    font-size: 8px;
-    font-weight: 500;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 8px 0;
-    text-align: center;
-    margin-bottom: 52px;
-  }
-
-  /* ── PRODUCTS ── */
-  .products-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-bottom: 2px;
-  }
-
-  .product-card {
-    background: var(--card);
-    padding: 36px 32px 32px;
-    position: relative;
-  }
-
-  .product-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--border);
-  }
-
-  .product-card.force::before { background: var(--amber); }
-
-  .p-type {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-
-  .p-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1;
-    color: var(--ice);
-    margin-bottom: 4px;
-  }
-
-  .p-sub {
-    font-size: 11px;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 28px;
-  }
-
-  .price-area {
-    margin-bottom: 28px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .price-main {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--amber);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .price-note {
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-  }
-
-  .mkt-ref {
-    font-size: 10px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  .mkt-ref span { color: var(--ice); font-weight: 500; }
-
-  .del-list { list-style: none; }
-
-  .del-list li {
-    display: flex;
-    gap: 14px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    align-items: flex-start;
-    font-size: 12.5px;
-    color: var(--ice);
-  }
-
-  .del-list li:last-child { border-bottom: none; }
-
-  .dm { color: var(--muted); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
-  .force .dm.plus { color: var(--amber); }
-
-  .db { line-height: 1.45; }
-  .dn { display: block; font-size: 10.5px; color: var(--muted); font-style: italic; margin-top: 2px; }
-
-  .hybria-note {
-    background: rgba(200,146,42,0.07);
-    border-left: 2px solid var(--amber);
-    padding: 12px 16px;
-    margin-top: 20px;
-    font-size: 11.5px;
-    color: var(--ice);
-    font-style: italic;
-    line-height: 1.65;
-  }
-
-  /* ── ADD-ON ── */
-  .addon-row {
-    background: var(--card);
-    padding: 28px 32px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 48px;
-    border-top: 2px solid rgba(200,146,42,0.25);
-    margin-bottom: 2px;
-  }
-
-  .addon-badge {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 8px;
-  }
-
-  .addon-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--ice);
-    margin-bottom: 6px;
-  }
-
-  .addon-desc {
-    font-size: 12px;
-    color: var(--muted);
-    font-style: italic;
-    max-width: 480px;
-    line-height: 1.65;
-  }
-
-  .addon-price-col { text-align: right; flex-shrink: 0; }
-
-  .addon-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    font-weight: 700;
-    color: var(--amber);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .addon-bundle { font-size: 10px; color: var(--muted); line-height: 2; }
-
-  /* ── PRICING TABLE ── */
-  .pricing-wrap { margin: 48px 0; }
-
-  .pricing-table { width: 100%; border-collapse: collapse; }
-
-  .pricing-table th {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 12px 20px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    background: #111;
-  }
-
-  .pricing-table th:not(:first-child) { text-align: center; }
-
-  .pricing-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    vertical-align: top;
-  }
-
-  .pricing-table td:not(:first-child) { text-align: center; }
-  .pricing-table tr:last-child td { border-bottom: none; }
-
-  .t-prod {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ice);
-    display: block;
-    margin-bottom: 2px;
-  }
-
-  .t-sub { font-size: 10px; color: var(--muted); font-style: italic; }
-
-  .t-phase {
-    display: block;
-    font-size: 8px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-
-  .t-ea { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--amber); }
-  .t-fo { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--ice); opacity: 0.55; }
-  .t-de { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--muted); }
-
-  .t-econ td {
-    background: rgba(200,146,42,0.05);
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--amber);
-    letter-spacing: 0.04em;
-  }
-
-  .vagas {
-    display: inline-block;
-    border: 1px solid var(--amber);
-    color: var(--amber);
-    font-size: 7px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 1px 6px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
-  /* ── BOTTOM GRID ── */
-  .bottom-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 2px;
-  }
-
-  .info-card { background: var(--card); padding: 32px; }
-
-  .card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--ice);
-    margin-bottom: 24px;
-    line-height: 1.2;
-  }
-
-  .funnel-list { list-style: none; }
-
-  .funnel-list li {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    font-size: 12px;
-  }
-
-  .funnel-list li:last-child { border-bottom: none; }
-
-  .f-step { font-size: 9px; color: var(--muted); width: 20px; flex-shrink: 0; }
-  .f-name { color: var(--ice); flex: 1; line-height: 1.4; }
-  .f-price { font-size: 10.5px; color: var(--muted); font-weight: 500; text-align: right; white-space: nowrap; }
-  .f-conn { padding: 2px 0 2px 32px; font-size: 10px; color: #3a3a3a; font-style: italic; }
-
-  .icp-list { list-style: none; }
-
-  .icp-list li {
-    display: flex;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    font-size: 12px;
-    color: var(--ice);
-    align-items: flex-start;
-    line-height: 1.4;
-  }
-
-  .icp-list li:last-child { border-bottom: none; }
-  .icp-m { color: var(--muted); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
-
-  .script-block { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
-
-  .script-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.85;
-  }
-
-  .script-text strong { color: var(--amber); font-style: normal; }
-
-  /* ── ANCHOR ── */
-  .anchor-card {
-    background: var(--card);
-    padding: 40px;
-    margin-top: 2px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 64px;
-    align-items: start;
-  }
-
-  .anchor-list { list-style: none; }
-
-  .anchor-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    font-size: 12px;
-    color: var(--ice);
-    gap: 24px;
-  }
-
-  .anchor-list li:last-child { border-bottom: none; }
-  .anchor-val { font-size: 11px; color: var(--muted); font-weight: 500; white-space: nowrap; }
-
-  .anchor-total { text-align: right; min-width: 210px; }
-
-  .anchor-mkt-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  .anchor-mkt { font-family: 'Playfair Display', serif; font-size: 58px; font-weight: 900; color: var(--amber); line-height: 1; letter-spacing: -1px; }
-
-  .anchor-pay-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-top: 18px; margin-bottom: 6px; }
-  .anchor-pay { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--ice); line-height: 1; }
-
-  .anchor-divider { width: 36px; height: 1px; background: var(--border); margin: 12px 0 12px auto; }
-  .anchor-roi { font-size: 11px; color: var(--muted); margin-top: 10px; font-style: italic; }
-
-  /* ── FOOTER ── */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding-top: 28px;
-    margin-top: 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .footer-left { font-size: 9px; font-weight: 400; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; line-height: 2; }
-
-  .footer-right {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: var(--muted);
-    text-align: right;
-    line-height: 1.6;
-  }
-
-  .footer-right cite { display: block; font-size: 10px; font-style: normal; color: #444; margin-top: 4px; letter-spacing: 0.1em; }
-
-  .gap { height: 2px; background: var(--black); }
+:root {
+  --black:  #0A0A0A;
+  --steel:  #2C2C2C;
+  --card:   #141414;
+  --card2:  #1A1A1A;
+  --card3:  #242424;
+  --ice:    #F4F4F0;
+  --ice2:   #CFCDC5;
+  --amber:  #C8922A;
+  --amber2: #D4A030;
+  --dim2:   #2C2C2C;
+  --dim3:   #3A3A3A;
+  --dim4:   #444444;
+  --muted:  #8A8A8A;
+  --dim:    #2C2C2C;
+  --border:  rgba(200,146,42,0.12);
+  --border2: rgba(244,244,240,0.07);
+  --glass:   rgba(10,10,10,0.8);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--ice);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* GRAIN OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.serif { font-family: 'Playfair Display', Georgia, serif; }
+.cond  { font-family: 'Inter', sans-serif; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: padding 0.4s, background 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+
+nav.scrolled {
+  padding: 14px 56px;
+  background: rgba(11,12,16,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ice);
+}
+
+.nav-brand em { font-style: italic; color: var(--amber); }
+
+.nav-right { display: flex; align-items: center; gap: 32px; }
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover { color: var(--amber); }
+
+.nav-cta {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--amber);
+  border: none;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-cta:hover { background: var(--amber2); transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 56px 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 70% at 75% 30%, rgba(200,146,42,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 15% 70%, rgba(123,168,196,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 50% at 50% 50%, rgba(200,146,42,0.03) 0%, transparent 60%),
+    var(--black);
+}
+
+.hero-marble {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      125deg,
+      transparent 0px,
+      transparent 60px,
+      rgba(200,146,42,0.015) 60px,
+      rgba(200,146,42,0.015) 61px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 90px,
+      rgba(240,239,232,0.01) 90px,
+      rgba(240,239,232,0.01) 91px
+    );
+}
+
+.hero-spotlight {
+  position: absolute;
+  top: -200px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200,146,42,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.hero-tagline::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber));
+}
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(44px, 7vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -1px;
+  color: var(--ice);
+  position: relative;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.5s forwards;
+  max-width: 800px;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  color: var(--amber);
+  display: block;
+}
+
+.hero-h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(18px, 2.5vw, 28px);
+  color: rgba(240,239,232,0.55);
+  line-height: 1.4;
+  margin-bottom: 52px;
+  max-width: 640px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.7s forwards;
+  position: relative;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.9s forwards;
+  position: relative;
+}
+
+.btn-primary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--amber);
+  border: none;
+  padding: 18px 40px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-primary:hover { background: var(--amber2); transform: translateY(-2px); }
+
+.btn-ghost {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.btn-ghost:hover { color: var(--ice2); }
+
+.hero-microcopy {
+  position: absolute;
+  right: 56px;
+  bottom: 96px;
+  text-align: right;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.1s forwards;
+}
+
+.hmc-n {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: rgba(200,146,42,0.12);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.hmc-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: -8px;
+}
+
+/* ── DIVIDER ── */
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), rgba(200,146,42,0.08), transparent);
+}
+
+/* ── SECTION WRAPPER ── */
+.section { 
+  padding: 110px 56px; 
+  max-width: 1240px; 
+  margin: 0 auto; 
+  box-sizing: border-box;
+  width: 100%;
+}
+.section-full { max-width: 100%; }
+.section-full .inner { max-width: 1240px; margin: 0 auto; padding: 110px 56px; }
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber));
+}
+
+/* ── 02 PROBLEMA ── */
+#problema { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.problema-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  max-width: 700px;
+}
+
+.problema-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba(240,239,232,0.45);
+  margin-bottom: 60px;
+}
+
+.problema-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 60px;
+}
+
+.pb-col {
+  padding: 48px 44px;
+  background: var(--card2);
+  position: relative;
+  overflow: hidden;
+}
+
+.pb-col.dark { background: #101010; }
+.pb-col.lit { background: #111009; border: 1px solid rgba(200,146,42,0.12); }
+
+.pb-col::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--border);
+}
+
+.pb-col.lit::before { background: linear-gradient(90deg, var(--amber), transparent); }
+
+.pb-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.pb-label.gold { color: var(--amber); }
+
+.pb-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(240,239,232,0.7);
+  margin-bottom: 20px;
+}
+
+.pb-text strong { color: var(--ice); }
+
+.pb-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+.pb-items li {
+  font-size: 14px;
+  color: rgba(240,239,232,0.6);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pb-items li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-size: 12px; }
+
+.pb-items li strong { color: var(--ice); font-weight: 500; }
+
+.problema-quote {
+  padding: 40px 52px;
+  background: #101010;
+  border-left: 2px solid var(--amber);
+  max-width: 860px;
+}
+
+.pq-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.5;
+  color: rgba(240,239,232,0.8);
+  margin-bottom: 16px;
+}
+
+.pq-attr {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* ── 03 PILARES ── */
+.pilares-intro {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.pi-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+
+.pi-h em { font-style: italic; color: var(--amber); }
+
+.pi-sub-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: rgba(240,239,232,0.55);
+  line-height: 1.6;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.pilar {
+  padding: 52px 40px;
+  background: var(--card);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.pilar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--dim);
+  transition: background 0.3s;
+}
+
+.pilar:hover { background: var(--card2); }
+.pilar:hover::before { background: var(--amber); }
+
+.pilar-n {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 100px;
+  color: rgba(200,146,42,0.06);
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  line-height: 1;
+}
+
+.pilar-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+
+.pilar-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(200,146,42,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.pilar-icon svg { width: 16px; height: 16px; stroke: var(--amber); fill: none; stroke-width: 1.5; }
+
+.pilar-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.pilar-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.pilar-desc {
+  font-size: 15px;
+  color: rgba(240,239,232,0.6);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  min-height: 5.1em;
+}
+
+.pilar-items { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+.pilar-items li {
+  font-size: 14px;
+  color: rgba(240,239,232,0.5);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pilar-items li::before { content: '·'; position: absolute; left: 0; color: var(--amber); }
+
+.pilar-freq {
+  margin-top: auto;
+  padding-top: 28px;
+  align-self: flex-start;
+}
+
+.pilar-freq span {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+}
+
+/* ── 04 5 CAMADAS ── */
+#camadas { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.camadas-intro {
+  margin-bottom: 52px;
+}
+
+.camadas-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  max-width: 700px;
+}
+
+.camadas-h em { font-style: italic; color: var(--amber); }
+
+.camadas-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(240,239,232,0.45);
+}
+
+.camadas-list { display: flex; flex-direction: column; gap: 2px; }
+
+.camada {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 0;
+  background: var(--card2);
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.camada:hover { background: var(--card3); }
+
+.camada-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
+  background: rgba(200,146,42,0.04);
+  border-right: 1px solid var(--border);
+}
+
+.camada-num span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: rgba(200,146,42,0.3);
+}
+
+.camada-body { padding: 32px 36px; }
+
+.camada-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.camada-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--ice);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.camada-desc {
+  font-size: 15px;
+  color: rgba(240,239,232,0.55);
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+.camada-meta {
+  padding: 32px 36px 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.camada-freq {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.camada-val {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: rgba(200,146,42,0.4);
+  text-align: right;
+}
+
+.camada-format {
+  font-size: 11px;
+  color: rgba(240,239,232,0.3);
+  text-align: right;
+  line-height: 1.4;
+}
+
+.camada.destaque { background: #111009; border: 1px solid rgba(200,146,42,0.15); }
+.camada.destaque .camada-num { background: rgba(200,146,42,0.08); }
+.camada.destaque .camada-num span { color: rgba(200,146,42,0.6); }
+
+/* ── 05 GLOBAL ACCESS ── */
+.global-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.global-h em { font-style: italic; color: var(--amber); }
+
+.global-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(240,239,232,0.45);
+  margin-bottom: 56px;
+}
+
+.global-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.event-card {
+  padding: 56px 48px;
+  background: var(--card);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card.uk {
+  background: #0D0D0B;
+  border: 1px solid rgba(200,146,42,0.12);
+}
+
+.ec-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+}
+
+.ec-bg.uk-bg {
+  background: radial-gradient(ellipse 80% 80% at 50% 20%, rgba(200,146,42,0.8) 0%, transparent 70%);
+}
+
+.ec-bg.br-bg {
+  background: radial-gradient(ellipse 80% 80% at 80% 80%, rgba(123,168,196,0.8) 0%, transparent 70%);
+}
+
+.ec-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.ec-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.ec-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.ec-en {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 22px;
+  color: var(--amber);
+  margin-bottom: 32px;
+}
+
+.ec-desc {
+  font-size: 15px;
+  color: rgba(240,239,232,0.6);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.ec-includes { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+
+.ec-includes li {
+  font-size: 14px;
+  color: rgba(240,239,232,0.7);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.ec-includes li::before { content: '✓'; position: absolute; left: 0; color: var(--amber); font-size: 11px; top: 1px; }
+
+.ec-footnote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(240,239,232,0.35);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.ec-uk-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: 1px solid rgba(200,146,42,0.35);
+  padding: 6px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* ── 06 NETWORKING ── */
+#networking { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.networking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.nl-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+
+.nl-left h2 em { font-style: italic; color: var(--amber); }
+
+.nl-left p {
+  font-size: 15px;
+  color: rgba(240,239,232,0.6);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.nl-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.nl-stat-n {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 56px;
+  color: var(--amber);
+  line-height: 1;
+}
+
+.nl-stat-l {
+  font-size: 12px;
+  color: rgba(240,239,232,0.5);
+  line-height: 1.5;
+  max-width: 180px;
+}
+
+.vetting-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.vs {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border2);
+  align-items: flex-start;
+  position: relative;
+}
+
+.vs:last-child { border-bottom: none; }
+
+.vs-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: rgba(200,146,42,0.5);
+  min-width: 28px;
+  padding-top: 2px;
+}
+
+.vs-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--ice);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.vs-desc {
+  font-size: 15px;
+  color: rgba(240,239,232,0.45);
+  line-height: 1.6;
+}
+
+/* ── 07 BONUS ── */
+.bonus-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.bonus-card {
+  padding: 48px 44px;
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+}
+
+.bonus-card.dark { background: #101010; }
+
+.bc-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+.bc-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.bc-h em { font-style: italic; color: var(--amber); }
+
+.bc-desc {
+  font-size: 15px;
+  color: rgba(240,239,232,0.6);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.bc-items { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+
+.bc-items li {
+  font-size: 14px;
+  color: rgba(240,239,232,0.65);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.bc-items li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-size: 11px; }
+.bc-items li strong { color: var(--ice); font-weight: 500; }
+
+.bonus-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  max-width: 620px;
+}
+
+.bonus-h em { font-style: italic; color: var(--amber); }
+
+.bonus-intro {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(240,239,232,0.5);
+  margin-bottom: 48px;
+}
+
+/* ── 08 INVESTIMENTO ── */
+#investimento { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.invest-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  max-width: 700px;
+}
+
+.invest-h em { font-style: italic; color: var(--amber); }
+
+.invest-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(240,239,232,0.45);
+  margin-bottom: 52px;
+}
+
+.invest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 40px;
+}
+
+.invest-card {
+  padding: 52px 44px;
+  background: var(--card2);
+  position: relative;
+}
+
+.invest-card.preferred {
+  background: #111009;
+  border: 1px solid rgba(200,146,42,0.18);
+}
+
+.invest-card.preferred::after {
+  content: 'RECOMENDADO';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: var(--amber);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 4px 12px;
+}
+
+.ic-type {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.ic-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.ic-req {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ic-price-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 28px;
+}
+
+.icpb {
+  padding: 20px 18px;
+  background: var(--card);
+}
+
+.preferred .icpb { background: rgba(14,12,9,0.6); border: 1px solid rgba(200,146,42,0.08); }
+
+.icpb-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.icpb-price {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--ice);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.icpb-price.highlighted { color: var(--amber); font-size: 30px; }
+
+.icpb-note { font-size: 11px; color: var(--muted); }
+.icpb-diff { font-size: 11px; color: rgba(200,146,42,0.6); font-style: italic; margin-top: 4px; }
+
+.ic-includes { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.ic-includes li {
+  font-size: 14px;
+  color: rgba(240,239,232,0.65);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.ic-includes li::before { content: '—'; position: absolute; left: 0; color: var(--amber); }
+.ic-includes li strong { color: var(--ice); font-weight: 500; }
+
+.ic-vagas {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.invest-nota {
+  padding: 36px 44px;
+  background: #101010;
+  border: 1px solid rgba(200,146,42,0.1);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.in-icon { font-size: 28px; opacity: 0.7; }
+
+.in-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(240,239,232,0.7);
+  line-height: 1.6;
+}
+
+.in-text strong { color: var(--amber); font-style: normal; }
+
+/* ── 09 ANCORA ── */
+.ancora-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 80px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.ancora-list { list-style: none; }
+
+.ancora-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border2);
+  gap: 24px;
+}
+
+.ai-name { font-size: 15px; color: rgba(240,239,232,0.6); line-height: 1.5; }
+
+.ai-val {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(240,239,232,0.35);
+  white-space: nowrap;
+}
+
+.ancora-summary { min-width: 260px; text-align: right; position: sticky; top: 100px; }
+
+.as-mkt-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.as-mkt-v {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: rgba(240,239,232,0.15);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 28px;
+  text-decoration: line-through;
+  text-decoration-color: rgba(200,146,42,0.25);
+}
+
+.as-div { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--amber)); margin-bottom: 24px; }
+
+.as-ea-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.as-ea-v {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: var(--ice);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.as-roi { font-size: 13px; color: rgba(240,239,232,0.45); line-height: 1.5; }
+.as-roi strong { color: var(--amber); }
+
+/* ── 10 VETTING ── */
+#vetting { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.vetting-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  max-width: 640px;
+}
+
+.vetting-h em { font-style: italic; color: var(--amber); }
+
+.vetting-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(240,239,232,0.45);
+  margin-bottom: 56px;
+}
+
+.vetting-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.vetting-steps-v { display: flex; flex-direction: column; gap: 0; }
+
+.vstep {
+  display: flex;
+  gap: 28px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border2);
+  position: relative;
+}
+
+.vstep:last-child { border-bottom: none; }
+
+.vstep-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: rgba(200,146,42,0.1);
+  line-height: 1;
+  min-width: 48px;
+}
+
+.vstep-body { flex: 1; }
+
+.vstep-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--ice);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.vstep-desc {
+  font-size: 15px;
+  color: rgba(240,239,232,0.5);
+  line-height: 1.65;
+}
+
+.vstep-last {
+  margin-top: 8px;
+  padding: 20px 24px;
+  background: #111009;
+  border: 1px solid rgba(200,146,42,0.2);
+}
+
+.vstep-last-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.vstep-last-t {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: rgba(240,239,232,0.75);
+  line-height: 1.5;
+}
+
+.vetting-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vetting-req {
+  padding: 40px 36px;
+  background: var(--card2);
+}
+
+.vr-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.vr-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+.vr-items li {
+  font-size: 15px;
+  color: rgba(240,239,232,0.65);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.vr-items li::before { content: '◆'; position: absolute; left: 0; color: rgba(200,146,42,0.4); font-size: 8px; top: 5px; }
+.vr-items li strong { color: var(--ice); font-weight: 500; }
+
+.vetting-cta-box {
+  padding: 40px 36px;
+  background: #111009;
+  border: 1px solid rgba(200,146,42,0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.vcb-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: rgba(240,239,232,0.7);
+  line-height: 1.4;
+}
+
+.vcb-footnote {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── FAQ ── */
+.faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; }
+
+.faq-item { background: var(--card); overflow: hidden; }
+
+.faq-q {
+  padding: 28px 44px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  transition: background 0.3s;
+}
+
+.faq-q:hover { background: var(--card2); }
+
+.faq-q-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--ice);
+  line-height: 1.35;
+}
+
+.faq-icon {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--amber);
+  min-width: 24px;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; padding: 0 44px; }
+
+.faq-item.open .faq-a { max-height: 500px; padding: 0 44px 32px; }
+
+.faq-a-text {
+  font-size: 16px;
+  color: rgba(240,239,232,0.6);
+  line-height: 1.8;
+  border-top: 1px solid var(--border2);
+  padding-top: 24px;
+}
+
+/* ── CTA FINAL ── */
+#cta-final {
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 50%, rgba(200,146,42,0.05) 0%, transparent 65%),
+    var(--black);
+  text-align: center;
+  padding: 140px 56px;
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cf-bg {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200,146,42,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+#cta-final .inner { max-width: 680px; margin: 0 auto; position: relative; }
+
+.cf-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 36px;
+}
+
+.cf-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(44px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin-bottom: 28px;
+}
+
+.cf-h em { font-style: italic; color: var(--amber); }
+
+.cf-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(240,239,232,0.45);
+  line-height: 1.6;
+  margin-bottom: 52px;
+}
+
+.cf-actions { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+
+.cf-footnote {
+  margin-top: 36px;
+  font-size: 12px;
+  color: rgba(240,239,232,0.25);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 48px 56px;
+  border-top: 1px solid var(--border2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.25em;
+}
+
+.footer-brand em { font-style: italic; color: var(--amber); }
+
+.footer-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+.footer-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: right;
+}
+
+.footer-quote cite {
+  display: block;
+  font-size: 10px;
+  font-style: normal;
+  color: var(--dim);
+  margin-top: 5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,12,16,0.97);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 600px;
+  padding: 56px;
+  transform: translateY(24px);
+  transition: transform 0.4s;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-top-line {
+  width: 40px;
+  height: 1px;
+  background: var(--amber);
+  margin-bottom: 28px;
+}
+
+.modal-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.modal-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 36px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s;
+  padding: 4px 8px;
+}
+
+.modal-close:hover { color: var(--ice); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-group { margin-bottom: 12px; }
+
+.form-group label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: var(--card2);
+  border: 1px solid var(--border2);
+  color: var(--ice);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: rgba(200,146,42,0.5); }
+
+.form-group textarea { resize: vertical; min-height: 88px; }
+.form-group select option { background: var(--card2); color: var(--ice); }
+
+.form-submit {
+  width: 100%;
+  background: var(--amber);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.form-submit:hover { background: var(--amber2); }
+
+.form-note {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 960px) {
+  nav { padding: 16px 24px; }
+  nav.scrolled { padding: 12px 24px; }
+  .nav-link { display: none; }
+  #hero { padding: 0 24px 80px; }
+  .section { padding: 64px 24px; max-width: 100%; }
+  .section-full .inner { padding: 64px 24px; }
+  #cta-final { padding: 96px 24px; }
+  footer { padding: 36px 24px; }
+  .problema-layout, .global-grid, .bonus-layout, .invest-grid,
+  .networking-layout, .vetting-layout, .ancora-layout,
+  .pilares-grid, .pilares-intro { grid-template-columns: 1fr; }
+  .pilares-intro { gap: 24px; }
+  .pilar { padding: 40px 28px; }
+  .camada { grid-template-columns: 52px 1fr; }
+  .camada-body { padding: 24px 20px; }
+  .camada-meta { display: none; }
+  .hero-h1 { font-size: 44px; }
+  .hero-microcopy { display: none; }
+  .ancora-layout { gap: 48px; }
+  .ancora-summary { text-align: left; min-width: 100%; }
+  .faq-q { padding: 24px 24px; }
+  .faq-a { padding: 0 24px; }
+  .faq-item.open .faq-a { padding: 0 24px 28px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-quote { display: none; }
+  .modal { padding: 36px 28px; }
+  .global-grid, .bonus-layout { gap: 3px; }
+  .pilar-n { font-size: 70px; }
+  .pi-h { font-size: clamp(32px, 8vw, 52px); }
+  .problema-h { font-size: clamp(32px, 8vw, 52px); }
+}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div>
-      <div class="inst-label">Siberia Institute · Executive Division</div>
-      <div class="brand-title serif">WAR<br>ROOM<br><span class="amber">EXEC.</span></div>
-    </div>
-    <div class="header-right">
-      <div class="tagline">"Board-level decisions.<br>War-room speed."</div>
-      <div class="sub-tag">
-        1 ano de estrategia em 72H<br>
-        AI-First, sem hype<br>
-        + Equipe AI-First
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-brand serif">SIBERIA <em>Council League</em></div>
+  <div class="nav-right">
+    <button class="nav-cta" onclick="openModal()">Iniciar Protocolo</button>
+  </div>
+</nav>
+
+<!-- 01 HERO -->
+<section id="hero" style="max-width:100%;padding-top:100px;">
+  <div class="hero-bg"></div>
+  <div class="hero-marble"></div>
+  <div class="hero-spotlight"></div>
+
+  <div class="hero-tagline">Beyond the War Room · Siberia Institute · Executive Division</div>
+
+  <h1 class="hero-h1 serif">
+    Governança<br>Híbrida:
+    <em>Elite Humana<br>+ Inteligência Artificial.</em>
+  </h1>
+
+  <p class="hero-h2 serif">
+    O conselho AI-Native que garante que a estratégia instalada
+    no War Room se transforme em legado, com monitoramento contínuo,
+    acesso global e a blindagem que o topo exige.
+  </p>
+
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="openModal()">
+      Iniciar Protocolo de Aplicação <span style="font-size:16px;">→</span>
+    </button>
+    <a href="#pilares" class="btn-ghost">Conhecer a Metodologia</a>
+  </div>
+
+  <div class="hero-microcopy">
+    <div class="hmc-n serif">30</div>
+    <div class="hmc-l">Cadeiras por ciclo</div>
+  </div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- 02 PROBLEMA -->
+<div id="problema" class="section-full">
+  <div class="inner">
+    <div class="section-label reveal">02 · A Armadilha do Topo</div>
+
+    <h2 class="problema-h serif reveal reveal-d1">A guerra não<br>acaba no Dia 3.</h2>
+    <p class="problema-sub serif reveal reveal-d2">O mercado muda. A tecnologia avança. E a entropia tenta puxar sua empresa de volta.</p>
+
+    <div class="problema-layout reveal reveal-d2">
+      <div class="pb-col dark">
+        <div class="pb-label">O que acontece depois do War Room</div>
+        <p class="pb-text">Você desenhou o plano. O DNA foi extraído. A Hybria está em produção. <strong>Mas o mercado não esperou você terminar.</strong></p>
+        <ul class="pb-items">
+          <li>A tecnologia avança enquanto o plano ainda executa</li>
+          <li>A equipe sem governança volta à cultura anterior</li>
+          <li>A entropia operacional puxa a empresa para a mediocridade</li>
+          <li>As decisões difíceis voltam para a sua mesa</li>
+          <li>O sistema instalado envelhece sem calibração</li>
+        </ul>
+      </div>
+      <div class="pb-col lit">
+        <div class="pb-label gold">A Armadilha do Topo</div>
+        <p class="pb-text"><strong>Sua equipe espera ordens, não dúvidas.</strong> Sua família espera presença, não angústia.</p>
+        <ul class="pb-items">
+          <li><strong>Solidão do poder:</strong> onde você descarrega decisões de milhões?</li>
+          <li><strong>Pontos cegos:</strong> consultores concordam com você — ninguém audita</li>
+          <li><strong>Gap de linguagem:</strong> você fala de arquitetura, a equipe olha confusa</li>
+          <li><strong>Escala sem governança:</strong> o sistema cresce, mas quem calibra a rota?</li>
+          <li><strong>Custo invisível:</strong> cada mês sem board é um mês sem Norte</li>
+        </ul>
       </div>
     </div>
-  </header>
 
-  <div class="conf-bar">Confidencial · Uso Exclusivo do Closer · Cohort Inaugural · Marco 2026</div>
-
-  <!-- PRODUTOS -->
-  <div class="section-header"><span class="label">01 · Produtos</span></div>
-
-  <div class="products-grid">
-
-    <div class="product-card core">
-      <div class="p-type">War Room · Modelo 01</div>
-      <div class="p-name serif">Core</div>
-      <div class="p-sub">Imersao · Founder + C-Level · Presencial</div>
-      <div class="price-area">
-        <div class="price-main">12x R$4.990</div>
-        <div class="price-note">Early-Adopter · Cohort Inaugural · 5 vagas</div>
-        <div class="mkt-ref">Valor de mercado: <span>R$178.000</span></div>
-      </div>
-      <ul class="del-list">
-        <li><span class="dm">—</span><span class="db">IMA A1 + A2 — Diagnostico + leitura calibrada com Vagner</span></li>
-        <li><span class="dm">—</span><span class="db">Causa-Raiz + QUEST — Mapa de problema validado e documentado</span></li>
-        <li><span class="dm">—</span><span class="db">DNA Estrategico 72H — McKinsey-level · ativo permanente da empresa</span></li>
-        <li><span class="dm">—</span><span class="db">Inteligencia Estrategica de Mercado — Benchmark setorial com dados reais</span></li>
-        <li><span class="dm">—</span><span class="db">Posicionamento Estrategico — Declaracao unica assinada</span></li>
-        <li><span class="dm">—</span><span class="db">Matriz Persuasiva Estrategica — Copy por canal · ICP · mensagem · proposta</span></li>
-        <li><span class="dm">—</span><span class="db">Estrutura de Vendas Cientifica — Pipeline com gatilhos e scripts</span></li>
-        <li><span class="dm">—</span><span class="db">Plano AI-First 90 dias — Owners + metricas + dashboard vivo</span></li>
-        <li><span class="dm">—</span><span class="db">Hybria · 250 oportunidades trabalhadas<span class="dn">Configurada com o DNA das 72H · opera sem o founder presente</span></span></li>
-        <li><span class="dm">—</span><span class="db">Boardroom Presencial de Encerramento — Sessao de decisao de board-level</span></li>
-      </ul>
+    <div class="problema-quote reveal reveal-d3">
+      <div class="pq-text serif">"A Council League é o seu Sistema Imunológico Corporativo. O único lugar onde você pode baixar a guarda, validar sua visão e garantir que o plano seja executado, enquanto a tecnologia monitora o que o olho humano não vê."</div>
+      <div class="pq-attr">— A Promessa da Council League</div>
     </div>
+  </div>
+</div>
 
-    <div class="product-card force">
-      <div class="p-type">War Room · Modelo 02</div>
-      <div class="p-name serif">Full Force</div>
-      <div class="p-sub">Crew · Founder + Time AI-First · Presencial</div>
-      <div class="price-area">
-        <div class="price-main">12x R$7.990</div>
-        <div class="price-note">Early-Adopter · Cohort Inaugural · 5 vagas</div>
-        <div class="mkt-ref">Valor de mercado: <span>R$213.000</span></div>
-      </div>
-      <ul class="del-list">
-        <li><span class="dm" style="color:var(--muted);font-style:italic;font-size:11px;width:100%;display:block;padding-bottom:4px;">Tudo do Core, mais:</span></li>
-        <li><span class="dm plus">+</span><span class="db">GTM AI Engineering · 1 Chair<span class="dn">Extensao universitaria · Chancela MEC · R$23.000 separado</span></span></li>
-        <li><span class="dm plus">+</span><span class="db">Productivity OS — Fluenc[IA] / Eng. Contexto / Escala · 3 Chairs<span class="dn">Extensao universitaria · Chancela MEC · 3 colaboradores · R$4.000 cada · R$12.000 bundle</span></span></li>
-        <li><span class="dm plus">+</span><span class="db">3 colaboradores saem das 72H operando com agentes e prompts avancados</span></li>
-        <li><span class="dm plus">+</span><span class="db">Head de GTM com arquitetura de go-to-market e RevOps implementado</span></li>
-        <li><span class="dm plus">+</span><span class="db">Time alinhado ao DNA no mesmo ciclo em que o founder constroi a estrategia</span></li>
-      </ul>
-      <div class="hybria-note">
-        Hybria · 250 oportunidades trabalha sem parar apos as 72H. Configurada sobre o DNA da empresa. Uma venda fechada ja paga o investimento.
-      </div>
+<!-- 03 PILARES -->
+<section id="pilares" class="section">
+  <div class="section-label reveal">03 · Sistema de Governança</div>
+
+  <div class="pilares-intro">
+    <div class="reveal reveal-d1">
+      <h2 class="pi-h serif">O espelho mais<br>brutal que você<br>já <em>enfrentou.</em></h2>
+    </div>
+    <div class="reveal reveal-d2">
+      <p class="pi-sub-text serif">Consultores concordam com você. Nós auditamos você. A diferença entre validação e verdade.</p>
     </div>
   </div>
 
-  <div class="gap"></div>
-  <div class="addon-row">
-    <div>
-      <div class="addon-badge">Add-on · Extensao Universitaria · Chancela MEC</div>
-      <div class="addon-name serif">Pos-Graduacao</div>
-      <div class="addon-desc">"O War Room define onde a empresa vai. A Pos forma quem vai conduzir." Certificado reconhecido por instituicao parceira com chancela MEC.</div>
-    </div>
-    <div class="addon-price-col">
-      <div class="addon-price">R$25.000</div>
-      <div class="addon-bundle">
-        Bundle Full Force + Pos: <span style="color:var(--ice);font-weight:500;">R$99.000</span><br>
-        <span style="color:var(--amber);">Economia R$1.000 vs. separado</span>
+  <div class="pilares-grid reveal reveal-d2">
+    <div class="pilar">
+      <div class="pilar-n serif">I</div>
+      <div class="pilar-label">Pilar 01</div>
+      <div class="pilar-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="0"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
       </div>
+      <div class="pilar-h serif">Quarterly<br>Board Sessions</div>
+      <div class="pilar-en">O Norte</div>
+      <p class="pilar-desc">Reuniões trimestrais de prestação de contas. Revisamos números, auditamos a execução e recalibramos a rota com Vagner e o board de founders.</p>
+      <ul class="pilar-items">
+        <li>Auditoria de execução vs. DNA instalado</li>
+        <li>Recalibração de rota com dados reais</li>
+        <li>Decisões de board-level com Vagner presente</li>
+        <li>Validação de visão com pares de calibre equivalente</li>
+      </ul>
+      <div class="pilar-freq"><span>4× ao ano · Online</span></div>
+    </div>
+
+    <div class="pilar">
+      <div class="pilar-n serif">II</div>
+      <div class="pilar-label">Pilar 02</div>
+      <div class="pilar-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
+      </div>
+      <div class="pilar-h serif">Monthly<br>Hot Seats</div>
+      <div class="pilar-en">O Desbloqueio</div>
+      <p class="pilar-desc">Traga seu maior gargalo. A mesa resolve em tempo real. Acesso à inteligência coletiva de 30 founders que elimina pontos cegos fatais antes que se tornem crises.</p>
+      <ul class="pilar-items">
+        <li>Hot seat ao vivo com a mesa, problema real, solução real</li>
+        <li>Inteligência coletiva de 30 founders AI-Native</li>
+        <li>Eliminação de pontos cegos antes de virarem crises</li>
+        <li>Velocidade de decisão comprimida de meses para horas</li>
+      </ul>
+      <div class="pilar-freq"><span>12× ao ano · Online</span></div>
+    </div>
+
+    <div class="pilar">
+      <div class="pilar-n serif">III</div>
+      <div class="pilar-label">Pilar 03</div>
+      <div class="pilar-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="pilar-h serif">AI Board<br>Advisor</div>
+      <div class="pilar-en">A Verdade Fria</div>
+      <p class="pilar-desc">Acesso vitalício à tecnologia BAS + Hybria. Enquanto o board analisa o contexto humano, o agente de IA monitora seus dados e avisa onde você está perdendo dinheiro, antes da reunião.</p>
+      <ul class="pilar-items">
+        <li>BAS: Business AI System · R$5k/mês × 3 áreas · contínuo 365 dias</li>
+        <li>Hybria: Revenue Intelligence · 250 oportunidades/mês · R$4k/mês</li>
+        <li>Alerta antecipado: IA identifica perda antes do board humano ver</li>
+        <li>Dados em tempo real alimentando cada sessão trimestral</li>
+      </ul>
+      <div class="pilar-freq"><span>365 dias · Contínuo</span></div>
     </div>
   </div>
+</section>
 
-  <!-- PRICING TABLE -->
-  <div class="pricing-wrap">
-    <div class="section-header"><span class="label">02 · Evolucao de Preco · Early-Adopter ate Definitivo</span></div>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Early-Adopter <span class="vagas">5 vagas</span></th>
-          <th>Fundador · Cohort 2-3</th>
-          <th>Definitivo · Cohort 4+</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="t-prod serif">War Room Core</span><span class="t-sub">Imersao · founder + C-level</span></td>
-          <td><span class="t-phase">Agora · 30 dias</span><div class="t-ea">12x R$4.990</div></td>
-          <td><span class="t-phase">Meses 2-4</span><div class="t-fo">12x R$5.990</div></td>
-          <td><span class="t-phase">Mes 5+</span><div class="t-de">12x R$7.490</div></td>
-        </tr>
-        <tr>
-          <td><span class="t-prod serif">War Room Full Force</span><span class="t-sub">Crew · founder + time AI-First</span></td>
-          <td><span class="t-phase">Agora · 30 dias</span><div class="t-ea">12x R$7.990</div></td>
-          <td><span class="t-phase">Meses 2-4</span><div class="t-fo">12x R$9.490</div></td>
-          <td><span class="t-phase">Mes 5+</span><div class="t-de">12x R$11.990</div></td>
-        </tr>
-        <tr>
-          <td><span class="t-prod serif">Bundle Full Force + Pos</span><span class="t-sub">Stack completo · MEC incluso</span></td>
-          <td><span class="t-phase">Agora · 30 dias</span><div class="t-ea">R$99.000</div></td>
-          <td><span class="t-phase">Meses 2-4</span><div class="t-fo">R$118.000</div></td>
-          <td><span class="t-phase">Mes 5+</span><div class="t-de">R$145.000</div></td>
-        </tr>
-        <tr class="t-econ">
-          <td>Economia vs. preco definitivo</td>
-          <td>R$30.000</td>
-          <td>R$16.000</td>
-          <td>—</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<!-- 04 5 CAMADAS -->
+<div id="camadas" class="section-full">
+  <div class="inner">
+    <div class="section-label reveal">04 · As 5 Camadas de Entrega</div>
 
-  <!-- FUNIL + ICP -->
-  <div class="section-header"><span class="label">03 · Funil e Perfil do Comprador</span></div>
-  <div class="bottom-grid">
-    <div class="info-card">
-      <div class="card-title serif">Funil Completo<br>Siberia</div>
-      <ul class="funnel-list">
-        <li><span class="f-step">01</span><span class="f-name">IMA Digital — Diagnostico de Maturidade AI</span><span class="f-price">Gratuito</span></li>
-        <li class="f-conn">qualifica maturidade AI</li>
-        <li><span class="f-step">02</span><span class="f-name">Diagnostico Digital SaaS — Causa-raiz + QUEST</span><span class="f-price">R$1.500 – R$5.000</span></li>
-        <li class="f-conn">closer conduz calibracao · R$5k abatido no War Room</li>
-        <li><span class="f-step">03</span><span class="f-name">War Room Core — Imersao 72H</span><span class="f-price">12x R$4.990</span></li>
-        <li><span class="f-step">03</span><span class="f-name">War Room Full Force — Crew 72H</span><span class="f-price">12x R$7.990</span></li>
-        <li class="f-conn">bundle com Pos-Graduacao disponivel</li>
-        <li><span class="f-step">04</span><span class="f-name">Pos-Graduacao · Extensao MEC</span><span class="f-price">R$25.000</span></li>
-        <li><span class="f-step">05</span><span class="f-name">Boardroom — Produto separado</span><span class="f-price">A definir</span></li>
-        <li><span class="f-step">06</span><span class="f-name">Council League — Governanca anual</span><span class="f-price">R$120–150k/ano</span></li>
-      </ul>
+    <div class="camadas-intro reveal reveal-d1">
+      <h2 class="camadas-h serif">Cinco camadas.<br><em>Uma membership.</em></h2>
+      <p class="camadas-sub serif">O board que governa o Sistema Operacional que você instalou no War Room.</p>
     </div>
-    <div class="info-card">
-      <div class="card-title serif">Perfil do<br>Comprador · ICP</div>
-      <ul class="icp-list">
-        <li><span class="icp-m">—</span>Founder ou CEO · empresa B2B · qualquer segmento</li>
-        <li><span class="icp-m">—</span>5 a 200 funcionarios · faturamento R$5M – R$50M</li>
-        <li><span class="icp-m">—</span>IMA Score N3 ou N4 — Arquiteto ou AI-Native</li>
-        <li><span class="icp-m">—</span>Ja investe em IA. Sem arquitetura. Sem velocidade.</li>
-        <li><span class="icp-m">—</span>Dor: decisao estrategica mais lenta que a complexidade</li>
-        <li><span class="icp-m">—</span>Budget aprovado para aceleracao estrategica</li>
-        <li><span class="icp-m">—</span>Trigger: IMA revelou gargalo critico que bloqueia o proximo nivel</li>
-      </ul>
-      <div class="script-block">
-        <div class="label" style="margin-bottom:12px;">Script · Closer · Early-Adopter</div>
-        <div class="script-text serif">
-          "As primeiras <strong>5 empresas</strong> entram com preco de fundacao.
-          O definitivo a partir do 4o cohort e 12x R$7.490.
-          Fechando agora: <strong>12x R$4.990</strong> — economia real de <strong>R$30.000.</strong>
-          Em troca: seu caso alimenta o Benchmark AI-Native Brasil 2026.
-          Restam [X] vagas. A decisao precisa ser essa semana."
+
+    <div class="camadas-list">
+      <div class="camada reveal reveal-d1">
+        <div class="camada-num"><span class="serif">01</span></div>
+        <div class="camada-body">
+          <div class="camada-label">Camada 01 · Entrada</div>
+          <div class="camada-name serif">Siberia Board Room</div>
+          <div class="camada-desc">Imersão presencial nacional. Você entra no board. Calibração de visão, alinhamento com os 30 founders e sessão inaugural com Vagner. Acontece 1× ao ingressar, e define o patamar de cada membro.</div>
+        </div>
+        <div class="camada-meta">
+          <div class="camada-freq">1× ao ingressar</div>
+          <div class="camada-val serif">R$45.000</div>
+          <div class="camada-format">Presencial · Nacional</div>
+        </div>
+      </div>
+
+      <div class="camada reveal reveal-d2">
+        <div class="camada-num"><span class="serif">02</span></div>
+        <div class="camada-body">
+          <div class="camada-label">Camada 02 · Mensal</div>
+          <div class="camada-name serif">Table of Future</div>
+          <div class="camada-desc">Hot seat online. Traga seu maior gargalo, a mesa resolve em tempo real. 12× ao ano com os 30 founders e Vagner. A inteligência coletiva que elimina pontos cegos antes que virem crises.</div>
+        </div>
+        <div class="camada-meta">
+          <div class="camada-freq">12× ao ano</div>
+          <div class="camada-val serif">R$50.000</div>
+          <div class="camada-format">Online · Hot Seat</div>
+        </div>
+      </div>
+
+      <div class="camada reveal reveal-d3">
+        <div class="camada-num"><span class="serif">03</span></div>
+        <div class="camada-body">
+          <div class="camada-label">Camada 03 · Trimestral</div>
+          <div class="camada-name serif">Conselho do Futuro</div>
+          <div class="camada-desc">Board Session online. Auditoria de execução, recalibração de rota, decisões de board-level. 4× ao ano. O único espaço onde você presta contas para um board que entende o que você está construindo.</div>
+        </div>
+        <div class="camada-meta">
+          <div class="camada-freq">4× ao ano</div>
+          <div class="camada-val serif">R$60.000</div>
+          <div class="camada-format">Online · Board Session</div>
+        </div>
+      </div>
+
+      <div class="camada destaque reveal reveal-d4">
+        <div class="camada-num"><span class="serif">04</span></div>
+        <div class="camada-body">
+          <div class="camada-label">Camada 04 · Presencial Global</div>
+          <div class="camada-name serif">Future Summit</div>
+          <div class="camada-desc">Duas operações presenciais por ano. Brasil: extração de inteligência coletiva no contexto brasileiro. Inglaterra (Hinwick House): conclave blindado em solo britânico, foco em relevância, visão de futuro e legado. Um conclave. Dois mundos.</div>
+        </div>
+        <div class="camada-meta">
+          <div class="camada-freq">2× ao ano</div>
+          <div class="camada-val serif">R$40.000</div>
+          <div class="camada-format">Presencial · Brasil + UK</div>
+        </div>
+      </div>
+
+      <div class="camada reveal reveal-d5">
+        <div class="camada-num"><span class="serif">05</span></div>
+        <div class="camada-body">
+          <div class="camada-label">Camada 05 · Tecnologia Contínua</div>
+          <div class="camada-name serif">AI Council</div>
+          <div class="camada-desc">BAS (Business AI System) operando 365 dias em 3 áreas da empresa. Hybria em produção contínua, 250 oportunidades/mês. O founder multiplicado em tecnologia enquanto o board humano governa a estratégia.</div>
+        </div>
+        <div class="camada-meta">
+          <div class="camada-freq">365 dias</div>
+          <div class="camada-val serif">R$228.000</div>
+          <div class="camada-format">BAS R$180k + Hybria R$48k</div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ANCHOR -->
-  <div class="gap"></div>
-  <div class="anchor-card">
-    <div>
-      <div class="section-header" style="margin-bottom:20px;"><span class="label">04 · Ancora de Valor · Stack Completo Full Force + Pos</span></div>
-      <ul class="anchor-list">
-        <li><span>DNA Estrategico completo (McKinsey-level)</span><span class="anchor-val">R$150.000</span></li>
-        <li><span>IMA A1 + A2 · diagnostico + calibracao com Vagner</span><span class="anchor-val">R$3.000</span></li>
-        <li><span>Causa-Raiz + QUEST</span><span class="anchor-val">R$15.000</span></li>
-        <li><span>Inteligencia Estrategica de Mercado</span><span class="anchor-val">R$25.000</span></li>
-        <li><span>Posicionamento + Matriz Persuasiva Estrategica</span><span class="anchor-val">R$20.000</span></li>
-        <li><span>Estrutura de Vendas Cientifica</span><span class="anchor-val">R$20.000</span></li>
-        <li><span>Plano AI-First 90 dias documentado</span><span class="anchor-val">R$10.000</span></li>
-        <li><span>GTM AI Engineering · Extensao MEC</span><span class="anchor-val">R$23.000</span></li>
-        <li><span>Productivity OS x 3 · Extensao MEC</span><span class="anchor-val">R$12.000</span></li>
-        <li><span>Pos-Graduacao · Chancela MEC</span><span class="anchor-val">R$25.000</span></li>
-        <li><span>Hybria · 250 oportunidades trabalhadas</span><span class="anchor-val">R$18.000</span></li>
-      </ul>
-    </div>
-    <div class="anchor-total">
-      <div class="anchor-mkt-label">Valor total de mercado</div>
-      <div class="anchor-mkt serif">R$321k</div>
-      <div class="anchor-divider"></div>
-      <div class="anchor-pay-label">Bundle Early-Adopter</div>
-      <div class="anchor-pay serif">R$99.000</div>
-      <div class="anchor-roi">ROI antes de implementar: 3,2x garantido</div>
-    </div>
+<!-- 05 GLOBAL ACCESS -->
+<section id="global" class="section">
+  <div class="section-label reveal">05 · Global Access Pass — O QG é o Mundo</div>
+
+  <div class="reveal reveal-d1">
+    <h2 class="global-h serif">O mundo<br>é o seu <em>QG.</em></h2>
+    <p class="global-sub serif">Sua membership inclui o Golden Ticket para as duas operações globais anuais da Siberia.</p>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-left">
-      Siberia Institute · War Room Executive · One-Pager v2.0<br>
-      Marco 2026 · Confidencial · Uso interno do closer<br>
-      IMA · Hybria · Council League · Chancela MEC
+  <div class="global-grid reveal reveal-d2">
+    <div class="event-card">
+      <div class="ec-bg br-bg"></div>
+      <div class="ec-tag">Operação 01 · Brasil</div>
+      <div class="ec-subtitle">Soberania Operacional</div>
+      <div class="ec-name serif">Future Summit</div>
+      <div class="ec-en serif">Brasil</div>
+      <p class="ec-desc">Operação anual de alta intensidade em solo brasileiro. Foco em execução, velocidade e extração de inteligência coletiva no contexto do mercado brasileiro. Dois dias de imersão presencial com os 30 founders do ciclo e convidados de calibre equivalente.</p>
+      <ul class="ec-includes">
+        <li>Ticket do Summit, presença obrigatória</li>
+        <li>Hospedagem · Alimentação · Experiências inclusas</li>
+        <li>Extração de inteligência coletiva em contexto BR</li>
+        <li>Acesso à rede de parceiros e investidores do ecossistema Siberia</li>
+        <li>Sessão de board ao vivo com Vagner, decisões presenciais</li>
+      </ul>
+      <div class="ec-footnote serif">"Extração de inteligência na fonte. Em sala, com os pares certos."</div>
     </div>
-    <div class="footer-right serif">
-      "Freedom comes through absolute rigor."
-      <cite>— Vagner Campos, Siberia Institute</cite>
-    </div>
-  </footer>
 
+    <div class="event-card uk">
+      <div class="ec-bg uk-bg"></div>
+      <div class="ec-uk-badge">Exclusivo · UK Summit</div>
+      <div class="ec-tag">Operação 02 · Inglaterra</div>
+      <div class="ec-subtitle">Legado e Visão de Futuro</div>
+      <div class="ec-name serif">Future Summit</div>
+      <div class="ec-en serif">Hinwick House · UK</div>
+      <p class="ec-desc">Um conclave blindado em solo britânico. Hinwick House, ambiente de Old Money que combina a solidez de séculos de tradição com a tecnologia do presente. Foco em visão de longo prazo, relevância global e legado.</p>
+      <ul class="ec-includes">
+        <li>Ticket do Conclave Secreto, acesso restrito a membros</li>
+        <li>Hospedagem de Luxo em Hinwick House · Alimentação inclusa</li>
+        <li>"Secret Experience UK", agenda confidencial para membros</li>
+        <li>Acesso à inteligência global do ecossistema Siberia</li>
+        <li>Apenas o aéreo é por conta do membro</li>
+      </ul>
+      <div class="ec-footnote serif">"Um conclave blindado em solo britânico. O peso da tradição + a leveza da inovação."</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 NETWORKING -->
+<div id="networking" class="section-full">
+  <div class="inner">
+    <div class="section-label reveal">06 · Networking na Velocidade do Pensamento</div>
+
+    <div class="networking-layout">
+      <div class="nl-left reveal reveal-d1">
+        <h2 class="serif">Negócios na velocidade<br>do <em>pensamento.</em></h2>
+        <p>Lá fora, parcerias exigem meses de advogados e due diligence infinita. Aqui, o filtro já foi feito. O Vetting Protocol garante que quem senta ao seu lado tem a mesma ética, calibre e potência.</p>
+        <p>Não é networking. É acesso a inteligência que não está disponível para compra, está disponível apenas para quem foi aprovado.</p>
+        <p>Quando a conversa começa, a confiança já existe. O que levaria 10 anos de rede se comprime em 10 minutos de mesa.</p>
+        <div class="nl-stat">
+          <div class="nl-stat-n serif">30</div>
+          <div class="nl-stat-l">founders AI-Native aprovados por ciclo, cada um passando pelo Vetting Protocol</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2">
+        <div class="section-label" style="margin-bottom:32px;">Protocolo de Seleção</div>
+        <div class="vetting-steps">
+          <div class="vs">
+            <div class="vs-num">01</div>
+            <div>
+              <div class="vs-title serif">Aplicação Tática</div>
+              <div class="vs-desc">Preenchimento do Dossiê Empresarial. Dados reais, não marketing.</div>
+            </div>
+          </div>
+          <div class="vs">
+            <div class="vs-num">02</div>
+            <div>
+              <div class="vs-title serif">Due Diligence</div>
+              <div class="vs-desc">Nossa IA analisa a pegada digital da empresa. Antes de você falar, já sabemos o que você construiu.</div>
+            </div>
+          </div>
+          <div class="vs">
+            <div class="vs-num">03</div>
+            <div>
+              <div class="vs-title serif">Entrevista de Conselho</div>
+              <div class="vs-desc">Reunião de alinhamento com Vagner. Fit cultural, não fit financeiro.</div>
+            </div>
+          </div>
+          <div class="vs">
+            <div class="vs-num">04</div>
+            <div>
+              <div class="vs-title serif">Deliberação</div>
+              <div class="vs-desc">O Comitê aprova ou recusa. Sem exceções, sem negociação.</div>
+            </div>
+          </div>
+          <div class="vs">
+            <div class="vs-num">05</div>
+            <div>
+              <div class="vs-title serif">The Black Letter</div>
+              <div class="vs-desc">O convite oficial é enviado. Ser selecionado já é o sinal.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- 07 BONUS EDUCACIONAL -->
+<section class="section">
+  <div class="section-label reveal">07 · Bônus Estratégico — Preparar o Exército</div>
+
+  <div class="reveal reveal-d1">
+    <h2 class="bonus-h serif">Pare de traduzir.<br><em>Comece a comandar.</em></h2>
+    <p class="bonus-intro serif">Sua solidão também vem do fato de que sua equipe não fala a sua língua. Nós preparamos o exército para você.</p>
+  </div>
+
+  <div class="bonus-layout reveal reveal-d2">
+    <div class="bonus-card">
+      <div class="bc-tag">Bônus 01 · Para o Seu Nº 2</div>
+      <div class="bc-h serif">Pós-Graduação <em>[AI] Business Architecture</em></div>
+      <p class="bc-desc">Uma cadeira na pós-graduação para o segundo da empresa. Enquanto você governa no conselho, seu sucessor aprende a arquitetura que você usa. Quando a conversa começar, ele já vai entender o que você está dizendo.</p>
+      <ul class="bc-items">
+        <li><strong>Pós-Graduação AI Business Architecture</strong> — Chancela MEC · R$25.000</li>
+        <li>1 cadeira inclusa na membership · para quem você indicar</li>
+        <li>Alinhamento de linguagem estratégica: founder ↔ time</li>
+        <li>Formação do sucessor enquanto a empresa escala</li>
+      </ul>
+    </div>
+
+    <div class="bonus-card dark">
+      <div class="bc-tag">Bônus 02 · Para o Seu Líder</div>
+      <div class="bc-h serif">MBA <em>Military-Grade AI Leadership</em></div>
+      <p class="bc-desc">Uma cadeira no MBA para um líder de operações. Nós não esperamos que sua equipe "entenda" depois do War Room, nós treinamos um, para que treine no mesmo padrão que você. O gap de linguagem fecha porque o exército fala o mesmo idioma que o general.</p>
+      <ul class="bc-items">
+        <li><strong>MBA Military-Grade AI Leadership</strong> — Chancela MEC</li>
+        <li>1 líder de operações treinado no mesmo padrão do founder</li>
+        <li>Alinhamento tático entre comando e execução</li>
+        <li>O general não traduz mais, o tenente já entende</li>
+      </ul>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bc-tag">Bônus 03 · Head de Receita</div>
+      <div class="bc-h serif">Extensão <em>GTM AI Engineering</em></div>
+      <p class="bc-desc">Uma cadeira para formar um head de escala com IA. Um profissional desse calibre custa mais de R$1.000.000 no mercado, é o responsável por sustentar toda a arquitetura de escala de receita da empresa. Você forma esse ativo internamente.</p>
+      <ul class="bc-items">
+        <li><strong>GTM AI Engineering</strong>, Extensão MEC · R$23.000</li>
+        <li>Head de escala formado com IA no centro da operação</li>
+        <li>Profissional que sustenta toda a arquitetura de receita</li>
+        <li>Custo de mercado: +R$1.000.000 · você forma internamente</li>
+      </ul>
+    </div>
+
+    <div class="bonus-card dark">
+      <div class="bc-tag">Bônus 04 · Nível Tático</div>
+      <div class="bc-h serif">Extensão <em>AI Productivity OS</em></div>
+      <p class="bc-desc">Mais 3 cadeiras para escalar a produtividade do seu time. O sistema operacional de produtividade com IA instalado na linha de frente, porque de nada adianta o general ter visão se o pelotão opera no manual antigo.</p>
+      <ul class="bc-items">
+        <li><strong>AI Productivity OS</strong>, Extensão MEC · R$12.000</li>
+        <li>3 cadeiras inclusas · para os líderes táticos que você indicar</li>
+        <li>Produtividade com agentes de IA na linha de execução</li>
+        <li>O exército inteiro opera com o mesmo sistema do general</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 08 INVESTIMENTO -->
+<div id="investimento" class="section-full">
+  <div class="inner">
+    <div class="section-label reveal">08 · Membership — Alumni vs. Entrada Direta</div>
+
+    <div class="reveal reveal-d1">
+      <h2 class="invest-h serif">Uma membership.<br><em>Dois caminhos.</em></h2>
+      <p class="invest-sub serif">O War Room instalou o sistema. A Council League garante que ele nunca para de evoluir.</p>
+    </div>
+
+    <div class="invest-grid reveal reveal-d2">
+      <div class="invest-card preferred">
+        <div class="ic-type">Via de Entrada · Preferencial</div>
+        <div class="ic-name serif">Alumni War Room</div>
+        <div class="ic-req serif">Requisito: Conclusão do War Room Core ou Full Force</div>
+        <div class="ic-price-box">
+          <div class="icpb">
+            <div class="icpb-label">Pagamento Anual</div>
+            <div class="icpb-price highlighted serif">R$360.000</div>
+            <div class="icpb-note">Acesso imediato</div>
+          </div>
+          <div class="icpb">
+            <div class="icpb-label">Parcelado · 12×</div>
+            <div class="icpb-price serif">12× R$30.000</div>
+            <div class="icpb-note">R$360k / ano</div>
+          </div>
+        </div>
+        <ul class="ic-includes">
+          <li><strong>5 Camadas completas</strong> — Board Room · Table of Future · Conselho do Futuro · Future Summit · AI Council</li>
+          <li><strong>BAS contínuo</strong> — R$5k/mês × 3 áreas · 365 dias</li>
+          <li><strong>Hybria em produção</strong> — 250 oportunidades/mês · R$4k/mês</li>
+          <li><strong>Global Access Pass</strong> — Brasil + Hinwick House UK</li>
+          <li><strong>Pós-Graduação + MBA</strong> — cadeiras para equipe · Chancela MEC</li>
+          <li><strong>Vetting Protocol</strong> — 30 founders aprovados por ciclo</li>
+        </ul>
+        <div class="ic-vagas">Máximo 30 empresas por ciclo · Alumni têm prioridade</div>
+      </div>
+
+      <div class="invest-card">
+        <div class="ic-type">Via de Entrada · Direta</div>
+        <div class="ic-name serif">Entrada Direta</div>
+        <div class="ic-req serif">Requisito: IMA Score N3–N4 + aprovação de Vagner Campos</div>
+        <div class="ic-price-box">
+          <div class="icpb">
+            <div class="icpb-label">Pagamento Anual</div>
+            <div class="icpb-price serif">R$400.000</div>
+            <div class="icpb-note">Acesso imediato</div>
+          </div>
+          <div class="icpb">
+            <div class="icpb-label">Parcelado · 12×</div>
+            <div class="icpb-price serif">12× R$40.000</div>
+            <div class="icpb-note">R$400k / ano</div>
+            <div class="icpb-diff">+R$40.000 vs Alumni</div>
+          </div>
+        </div>
+        <ul class="ic-includes">
+          <li><strong>5 Camadas completas</strong> — mesmo acesso que Alumni</li>
+          <li><strong>BAS contínuo</strong> — R$5k/mês × 3 áreas · 365 dias</li>
+          <li><strong>Hybria em produção</strong> — 250 oportunidades/mês · R$4k/mês</li>
+          <li><strong>Global Access Pass</strong> — Brasil + Hinwick House UK</li>
+          <li><strong>Pós-Graduação + MBA</strong> — cadeiras para equipe · Chancela MEC</li>
+          <li><strong>Sem o War Room</strong> — entrada direta requer aprovação pessoal</li>
+        </ul>
+        <div class="ic-vagas">Vagas limitadas · Sujeito a aprovação do Comitê</div>
+      </div>
+    </div>
+
+    <div class="invest-nota reveal reveal-d3">
+      <div class="in-icon">◆</div>
+      <div class="in-text serif">"Não vendemos cadeiras. <strong>Nós selecionamos membros.</strong> O valor financeiro é menor que o custo de um executivo sênior. O valor estratégico é incalculável. Quanto custa governar sem um board?"</div>
+    </div>
+  </div>
+</div>
+
+<!-- 09 ANCORA -->
+<section class="section">
+  <div class="section-label reveal">09 · Âncora de Valor — Stack Completo da Membership</div>
+
+  <div class="reveal reveal-d1" style="margin-bottom:0;">
+    <h2 class="bonus-h serif" style="max-width:700px;margin-bottom:12px;">O custo de não ter<br><em>um board.</em></h2>
+    <p class="bonus-intro serif" style="margin-bottom:0;">Veja o que está incluído e o que você pagaria no mercado por cada peça.</p>
+  </div>
+
+  <div class="ancora-layout reveal reveal-d1" style="margin-top:52px;">
+    <ul class="ancora-list">
+      <li class="ancora-item"><span class="ai-name">Siberia Board Room · imersão presencial inaugural</span><span class="ai-val">R$45.000</span></li>
+      <li class="ancora-item"><span class="ai-name">Table of Future · 12 Hot Seats anuais</span><span class="ai-val">R$50.000</span></li>
+      <li class="ancora-item"><span class="ai-name">Conselho do Futuro · 4 Board Sessions trimestrais</span><span class="ai-val">R$60.000</span></li>
+      <li class="ancora-item"><span class="ai-name">Future Summit · Brasil · operação anual presencial</span><span class="ai-val">—</span></li>
+      <li class="ancora-item"><span class="ai-name">Future Summit · UK · Hinwick House · conclave secreto</span><span class="ai-val">R$40.000</span></li>
+      <li class="ancora-item"><span class="ai-name">BAS Business AI System · R$5.000/mês × 3 áreas × 12</span><span class="ai-val">R$180.000</span></li>
+      <li class="ancora-item"><span class="ai-name">Hybria Revenue Intelligence · R$4.000/mês × 12</span><span class="ai-val">R$48.000</span></li>
+      <li class="ancora-item"><span class="ai-name">Pós-Graduação AI Business Architecture · 1 cadeira · MEC</span><span class="ai-val">R$25.000</span></li>
+      <li class="ancora-item"><span class="ai-name">GTM AI Engineering · Extensão MEC</span><span class="ai-val">R$23.000</span></li>
+      <li class="ancora-item"><span class="ai-name">Productivity OS × 3 · Extensão MEC</span><span class="ai-val">R$12.000</span></li>
+    </ul>
+
+    <div class="ancora-summary">
+      <div class="as-mkt-l">Valor de mercado</div>
+      <div class="as-mkt-v serif">R$483k</div>
+      <div class="as-div"></div>
+      <div class="as-ea-l">Alumni War Room</div>
+      <div class="as-ea-v serif">R$360k</div>
+      <div class="as-roi">
+        Stack 35% abaixo do mercado<br>
+        <strong>ROI antes de implementar</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 VETTING -->
+<div id="vetting" class="section-full">
+  <div class="inner">
+    <div class="section-label reveal">10 · Protocolo de Seleção</div>
+
+    <div class="reveal reveal-d1">
+      <h2 class="vetting-h serif">Não vendemos cadeiras.<br><em>Selecionamos membros.</em></h2>
+      <p class="vetting-sub serif">O Vetting Protocol garante que quem senta ao seu lado tem a mesma ética, calibre e potência.</p>
+    </div>
+
+    <div class="vetting-layout reveal reveal-d2">
+      <div class="vetting-steps-v">
+        <div class="vstep">
+          <div class="vstep-num serif">01</div>
+          <div class="vstep-body">
+            <div class="vstep-title serif">Aplicação Tática</div>
+            <div class="vstep-desc">Preenchimento do Dossiê Empresarial completo. Números reais, estrutura real, desafio real. Não é um formulário de interesse, é um documento estratégico.</div>
+          </div>
+        </div>
+        <div class="vstep">
+          <div class="vstep-num serif">02</div>
+          <div class="vstep-body">
+            <div class="vstep-title serif">Due Diligence</div>
+            <div class="vstep-desc">Nossa IA analisa a pegada digital da empresa, histórico público, tração e consistência entre o que você declara e o que os dados mostram.</div>
+          </div>
+        </div>
+        <div class="vstep">
+          <div class="vstep-num serif">03</div>
+          <div class="vstep-body">
+            <div class="vstep-title serif">Entrevista de Conselho</div>
+            <div class="vstep-desc">Reunião de alinhamento cultural com Vagner Campos. Verificamos fit, não capacidade de pagar. O calibre da mesa depende do calibre de cada membro.</div>
+          </div>
+        </div>
+        <div class="vstep">
+          <div class="vstep-num serif">04</div>
+          <div class="vstep-body">
+            <div class="vstep-title serif">Deliberação do Comitê</div>
+            <div class="vstep-desc">O Comitê avalia a aplicação completa. Aprova ou recusa. Sem exceções por volume de faturamento, sem negociação. O critério é fit estratégico e cultural.</div>
+          </div>
+        </div>
+        <div class="vstep">
+          <div class="vstep-num serif">05</div>
+          <div class="vstep-body">
+            <div class="vstep-title serif">The Black Letter</div>
+            <div class="vstep-desc">O convite oficial. Enviado apenas para os aprovados. Ser selecionado já é o sinal de que você chegou onde poucos chegam.</div>
+            <div class="vstep-last">
+              <div class="vstep-last-l">O convite</div>
+              <div class="vstep-last-t serif">"A carta preta chega. A cadeira está reservada. O conselho espera."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vetting-right-content reveal reveal-d3">
+        <div class="vetting-req">
+          <div class="vr-label">Requisitos de Entrada</div>
+          <ul class="vr-items">
+            <li><strong>Via Alumni:</strong> Conclusão do War Room Core ou Full Force</li>
+            <li><strong>Via Direta:</strong> IMA Score N3–N4 (Arquiteto ou AI-Native)</li>
+            <li><strong>Aprovação pessoal</strong> de Vagner Campos em todos os casos</li>
+            <li><strong>Faturamento</strong> a partir de R$5M — empresa com escala real</li>
+            <li><strong>Autonomia de decisão</strong> — founder ou CEO com poder real</li>
+            <li><strong>Fit cultural</strong> — ética, calibre e ambição equivalentes</li>
+          </ul>
+        </div>
+
+        <div class="vetting-cta-box">
+          <div class="vcb-title serif">"A conversa não compromete a cadeira. Mas a cadeira não espera a conversa."</div>
+          <button class="btn-primary" onclick="openModal()" style="width:100%;justify-content:center;">
+            Iniciar Protocolo de Aplicação →
+          </button>
+          <div class="vcb-footnote">Máximo 30 empresas por ciclo · Vagas por ordem de aprovação</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 11 FAQ -->
+<section class="section">
+  <div class="section-label reveal">11 · Perguntas do Conselho</div>
+
+  <h2 class="bonus-h serif reveal reveal-d1" style="max-width:640px;margin-bottom:12px;">As dúvidas que ficam<br><em>antes da decisão.</em></h2>
+  <p class="bonus-intro serif reveal reveal-d2" style="margin-bottom:0;">Respondemos as objeções que o board real levantaria.</p>
+
+  <div class="faq-list reveal reveal-d1">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q-text serif">"Preciso ter feito o War Room para entrar?"</div>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-text">A via preferencial é Alumni War Room — quem instalou o sistema tem prioridade de entrada e um investimento R$40.000 menor no ano. A entrada direta existe para founders com IMA Score N3-N4 que chegam com sistema operacional maduro, mas requer aprovação pessoal de Vagner. Em ambos os casos, o Vetting Protocol é obrigatório. Não há atalhos para a mesa.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q-text serif">"O que é o BAS e como funciona na prática?"</div>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-text">BAS é o Business AI System — tecnologia de monitoramento contínuo que opera em 3 áreas da sua empresa 365 dias por ano por R$5.000/mês. Antes de cada Board Session trimestral, o BAS já entregou um relatório com onde a empresa está perdendo dinheiro, onde está crescendo abaixo do potencial e o que precisa de decisão urgente. Você não chega na reunião com opiniões — chega com dados. O board humano faz o que a IA não faz: contexto, julgamento, decisão.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q-text serif">"Como funciona o Future Summit no UK — Hinwick House?"</div>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-text">Hinwick House é uma propriedade histórica inglesa — o ambiente físico do "Old Money" que combina a solidez de séculos com a tecnologia do presente. O formato é de conclave: agenda confidencial divulgada apenas para membros confirmados, hospedagem e alimentação inclusas, experiências que não existem em nenhum outro produto Siberia. Apenas o aéreo é por conta do membro. O restante é por nossa conta. Foco em visão de longo prazo, relevância global e legado.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q-text serif">"30 empresas é muito para um board funcionar?"</div>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-text">O board não opera com 30 empresas em sessão plenária simultânea. As camadas têm formatos diferentes: Hot Seats são sessões focadas onde cada empresa tem seu momento; Board Sessions são em grupos menores com Vagner presente; o Summit é o único momento onde os 30 se encontram presencialmente. O número 30 não é arbitrário — é o máximo que mantém a densidade de rede sem diluir a qualidade de cada interação. Menos seria exclusividade artificial; mais seria um evento.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q-text serif">"O que diferencia a Council League de um mastermind comum?"</div>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-text">Três coisas principais. Primeiro, o DNA: todo membro tem o mesmo sistema operacional instalado (War Room) ou equivalente — o ponto de partida já é o mesmo, o que eleva radicalmente a qualidade das conversas. Segundo, a tecnologia: o AI Board Advisor opera 365 dias e alimenta cada sessão com dados reais, não anedotas. Terceiro, o vetting: não compramos cadeiras — selecionamos membros. A maioria dos masterminds seleciona pelo faturamento. Nós selecionamos por fit cultural e calibre estratégico. Isso muda a qualidade do que acontece na sala.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q-text serif">"E se minha empresa não for aprovada?"</div>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-text">A recusa não é definitiva — é uma calibração. O Comitê indica o que precisa ser desenvolvido antes de uma nova aplicação. Em muitos casos, a recomendação é completar o War Room primeiro. O processo de aplicação é gratuito e confidencial. Aplicar não compromete nada. Mas ser recusado por falta de fit não é um fracasso — é uma indicação clara de qual deve ser o próximo passo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 CTA FINAL -->
+<div id="cta-final">
+  <div class="cf-bg"></div>
+  <div class="inner">
+    <div class="cf-eyebrow reveal">Council League · 30 Cadeiras · Ciclo 2026</div>
+    <h2 class="cf-h serif reveal reveal-d1">
+      Você chegou<br>ao topo.<br>
+      <em>Não governe sozinho.</em>
+    </h2>
+    <p class="cf-sub serif reveal reveal-d2">
+      O board que você sempre precisou, com a tecnologia que o mercado ainda não viu.<br>
+      30 founders. Uma mesa. Nenhuma decisão tomada no escuro.
+    </p>
+    <div class="cf-actions reveal reveal-d3">
+      <button class="btn-primary" onclick="openModal()">
+        Iniciar Protocolo de Aplicação →
+      </button>
+      <a href="#pilares" class="btn-ghost">Rever a Metodologia</a>
+    </div>
+    <div class="cf-footnote reveal reveal-d4">
+      War Room instala o Sistema Operacional · Council League governa · Hybria executa · Você escala.<br>
+      Processo seletivo obrigatório · Vagas por ordem de aprovação · Máximo 30 empresas por ciclo
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand serif">SIBERIA <em>Council League</em></div>
+    <div class="footer-sub">
+      Governança Híbrida · Elite Humana + Inteligência Artificial<br>
+      War Room instala · Council League governa · Hybria executa
+    </div>
+  </div>
+  <div class="footer-quote serif">
+    "Freedom comes through absolute rigor."
+    <cite>— Vagner Campos · Siberia Institute</cite>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-top-line"></div>
+    <div class="modal-eyebrow">Council League · Protocolo de Aplicação</div>
+    <div class="modal-h serif">Dossiê Empresarial</div>
+
+    <div class="form-row">
+      <div class="form-group"><label>Nome completo</label><input type="text" placeholder="Seu nome"></div>
+      <div class="form-group"><label>Empresa</label><input type="text" placeholder="Nome da empresa"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Cargo</label><input type="text" placeholder="CEO · Founder · Sócio"></div>
+      <div class="form-group"><label>Faturamento anual</label>
+        <select>
+          <option value="">Selecionar</option>
+          <option>R$5M – R$15M</option>
+          <option>R$15M – R$50M</option>
+          <option>R$50M – R$150M</option>
+          <option>Acima de R$150M</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Via de entrada</label>
+        <select>
+          <option value="">Selecionar</option>
+          <option>Alumni War Room</option>
+          <option>Entrada Direta · IMA N3–N4</option>
+        </select>
+      </div>
+      <div class="form-group"><label>IMA Score (se tiver)</label>
+        <select>
+          <option value="">Selecionar</option>
+          <option>N1 — Iniciante</option>
+          <option>N2 — Praticante</option>
+          <option>N3 — Arquiteto</option>
+          <option>N4 — AI-Native</option>
+          <option>Ainda não fiz o IMA</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group"><label>Maior desafio estratégico atual</label>
+      <textarea placeholder="Qual decisão de escala você não consegue tomar sozinho? Onde está o ponto cego?"></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Autonomia de decisão</label>
+        <select>
+          <option value="">Selecionar</option>
+          <option>Decisão 100% minha</option>
+          <option>Alinho com sócio</option>
+          <option>Preciso de aprovação do board</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Melhor horário</label>
+        <select>
+          <option value="">Selecionar</option>
+          <option>Manhã · 8h–12h</option>
+          <option>Tarde · 13h–18h</option>
+          <option>Noite · 18h–21h</option>
+        </select>
+      </div>
+    </div>
+    <button class="form-submit">Enviar Dossiê para Análise →</button>
+    <div class="form-note">Confidencial · Sem compromisso · O closer entrará em contato para calibração prévia ao Vetting Protocol</div>
+  </div>
+</div>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+reveals.forEach(r => io.observe(r));
+
+// MODAL
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOnBg(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// FAQ
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 </body>
 </html>
