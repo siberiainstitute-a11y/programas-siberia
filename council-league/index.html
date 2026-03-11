@@ -304,7 +304,13 @@ nav.scrolled {
 }
 
 /* ── SECTION WRAPPER ── */
-.section { padding: 110px 56px; max-width: 1240px; margin: 0 auto; }
+.section { 
+  padding: 110px 56px; 
+  max-width: 1240px; 
+  margin: 0 auto; 
+  box-sizing: border-box;
+  width: 100%;
+}
 .section-full { max-width: 100%; }
 .section-full .inner { max-width: 1240px; margin: 0 auto; padding: 110px 56px; }
 
@@ -480,6 +486,8 @@ nav.scrolled {
   position: relative;
   overflow: hidden;
   transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .pilar::before {
@@ -530,7 +538,7 @@ nav.scrolled {
 .pilar-h {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 33px;
   line-height: 1.15;
   margin-bottom: 8px;
 }
@@ -546,35 +554,41 @@ nav.scrolled {
 }
 
 .pilar-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(240,239,232,0.6);
   line-height: 1.7;
   margin-bottom: 20px;
+  min-height: 5.1em;
 }
 
-.pilar-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pilar-items { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 
 .pilar-items li {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(240,239,232,0.5);
   padding-left: 16px;
   position: relative;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .pilar-items li::before { content: '·'; position: absolute; left: 0; color: var(--amber); }
 
 .pilar-freq {
+  margin-top: auto;
+  padding-top: 28px;
+  align-self: flex-start;
+}
+
+.pilar-freq span {
   display: inline-block;
-  margin-top: 20px;
+  background: var(--amber);
+  color: var(--black);
   font-family: 'Inter', sans-serif;
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--black);
-  background: var(--amber);
-  padding: 4px 12px;
+  padding: 6px 14px;
 }
 
 /* ── 04 5 CAMADAS ── */
@@ -647,16 +661,16 @@ nav.scrolled {
 .camada-name {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 30px;
   color: var(--ice);
   margin-bottom: 10px;
   line-height: 1.1;
 }
 
 .camada-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(240,239,232,0.55);
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 600px;
 }
 
@@ -789,7 +803,7 @@ nav.scrolled {
 }
 
 .ec-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(240,239,232,0.6);
   line-height: 1.7;
   margin-bottom: 28px;
@@ -798,11 +812,11 @@ nav.scrolled {
 .ec-includes { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
 
 .ec-includes li {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(240,239,232,0.7);
   padding-left: 20px;
   position: relative;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .ec-includes li::before { content: '✓'; position: absolute; left: 0; color: var(--amber); font-size: 11px; top: 1px; }
@@ -912,16 +926,16 @@ nav.scrolled {
 .vs-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--ice);
   margin-bottom: 4px;
   line-height: 1.2;
 }
 
 .vs-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(240,239,232,0.45);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 /* ── 07 BONUS ── */
@@ -935,6 +949,8 @@ nav.scrolled {
 .bonus-card {
   padding: 48px 44px;
   background: var(--card);
+  display: flex;
+  flex-direction: column;
 }
 
 .bonus-card.dark { background: #101010; }
@@ -952,7 +968,7 @@ nav.scrolled {
 .bc-h {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 33px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -960,20 +976,20 @@ nav.scrolled {
 .bc-h em { font-style: italic; color: var(--amber); }
 
 .bc-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(240,239,232,0.6);
   line-height: 1.7;
   margin-bottom: 24px;
 }
 
-.bc-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.bc-items { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
 
 .bc-items li {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(240,239,232,0.65);
   padding-left: 18px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .bc-items li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-size: 11px; }
@@ -1124,11 +1140,11 @@ nav.scrolled {
 .ic-includes { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
 
 .ic-includes li {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(240,239,232,0.65);
   padding-left: 18px;
   position: relative;
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
 .ic-includes li::before { content: '—'; position: absolute; left: 0; color: var(--amber); }
@@ -1187,7 +1203,7 @@ nav.scrolled {
   gap: 24px;
 }
 
-.ai-name { font-size: 14px; color: rgba(240,239,232,0.6); line-height: 1.4; }
+.ai-name { font-size: 15px; color: rgba(240,239,232,0.6); line-height: 1.5; }
 
 .ai-val {
   font-family: 'Inter', sans-serif;
@@ -1302,16 +1318,16 @@ nav.scrolled {
 .vstep-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 25px;
   color: var(--ice);
   margin-bottom: 6px;
   line-height: 1.2;
 }
 
 .vstep-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(240,239,232,0.5);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .vstep-last {
@@ -1363,11 +1379,11 @@ nav.scrolled {
 .vr-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 
 .vr-items li {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(240,239,232,0.65);
   padding-left: 20px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .vr-items li::before { content: '◆'; position: absolute; left: 0; color: rgba(200,146,42,0.4); font-size: 8px; top: 5px; }
@@ -1399,7 +1415,7 @@ nav.scrolled {
 }
 
 /* ── FAQ ── */
-.faq-list { margin-top: 56px; display: flex; flex-direction: column; gap: 2px; }
+.faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; }
 
 .faq-item { background: var(--card); overflow: hidden; }
 
@@ -1418,9 +1434,9 @@ nav.scrolled {
 .faq-q-text {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--ice);
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .faq-icon {
@@ -1440,9 +1456,9 @@ nav.scrolled {
 .faq-item.open .faq-a { max-height: 500px; padding: 0 44px 32px; }
 
 .faq-a-text {
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(240,239,232,0.6);
-  line-height: 1.75;
+  line-height: 1.8;
   border-top: 1px solid var(--border2);
   padding-top: 24px;
 }
@@ -1715,22 +1731,32 @@ footer {
   nav.scrolled { padding: 12px 24px; }
   .nav-link { display: none; }
   #hero { padding: 0 24px 80px; }
-  .section { padding: 72px 24px; }
-  .section-full .inner { padding: 72px 24px; }
+  .section { padding: 64px 24px; max-width: 100%; }
+  .section-full .inner { padding: 64px 24px; }
   #cta-final { padding: 96px 24px; }
   footer { padding: 36px 24px; }
   .problema-layout, .global-grid, .bonus-layout, .invest-grid,
   .networking-layout, .vetting-layout, .ancora-layout,
   .pilares-grid, .pilares-intro { grid-template-columns: 1fr; }
-  .pilares-intro { gap: 32px; }
-  .camada { grid-template-columns: 56px 1fr; }
+  .pilares-intro { gap: 24px; }
+  .pilar { padding: 40px 28px; }
+  .camada { grid-template-columns: 52px 1fr; }
+  .camada-body { padding: 24px 20px; }
   .camada-meta { display: none; }
   .hero-h1 { font-size: 44px; }
   .hero-microcopy { display: none; }
-  .ancora-summary { text-align: left; }
+  .ancora-layout { gap: 48px; }
+  .ancora-summary { text-align: left; min-width: 100%; }
+  .faq-q { padding: 24px 24px; }
+  .faq-a { padding: 0 24px; }
+  .faq-item.open .faq-a { padding: 0 24px 28px; }
   .form-row { grid-template-columns: 1fr; }
   .footer-quote { display: none; }
   .modal { padding: 36px 28px; }
+  .global-grid, .bonus-layout { gap: 3px; }
+  .pilar-n { font-size: 70px; }
+  .pi-h { font-size: clamp(32px, 8vw, 52px); }
+  .problema-h { font-size: clamp(32px, 8vw, 52px); }
 }
 </style>
 </head>
@@ -1740,9 +1766,6 @@ footer {
 <nav id="mainNav">
   <div class="nav-brand serif">SIBERIA <em>Council League</em></div>
   <div class="nav-right">
-    <a href="#pilares" class="nav-link">Governança</a>
-    <a href="#global" class="nav-link">Global Access</a>
-    <a href="#investimento" class="nav-link">Membership</a>
     <button class="nav-cta" onclick="openModal()">Iniciar Protocolo</button>
   </div>
 </nav>
@@ -1762,7 +1785,7 @@ footer {
 
   <p class="hero-h2 serif">
     O conselho AI-Native que garante que a estratégia instalada
-    no War Room se transforme em legado — com monitoramento contínuo,
+    no War Room se transforme em legado, com monitoramento contínuo,
     acesso global e a blindagem que o topo exige.
   </p>
 
@@ -1815,14 +1838,14 @@ footer {
     </div>
 
     <div class="problema-quote reveal reveal-d3">
-      <div class="pq-text serif">"A Council League é o seu Sistema Imunológico Corporativo. O único lugar onde você pode baixar a guarda, validar sua visão e garantir que o plano seja executado — enquanto a tecnologia monitora o que o olho humano não vê."</div>
+      <div class="pq-text serif">"A Council League é o seu Sistema Imunológico Corporativo. O único lugar onde você pode baixar a guarda, validar sua visão e garantir que o plano seja executado, enquanto a tecnologia monitora o que o olho humano não vê."</div>
       <div class="pq-attr">— A Promessa da Council League</div>
     </div>
   </div>
 </div>
 
 <!-- 03 PILARES -->
-<section id="pilares">
+<section id="pilares" class="section">
   <div class="section-label reveal">03 · Sistema de Governança</div>
 
   <div class="pilares-intro">
@@ -1850,7 +1873,7 @@ footer {
         <li>Decisões de board-level com Vagner presente</li>
         <li>Validação de visão com pares de calibre equivalente</li>
       </ul>
-      <div class="pilar-freq">4× ao ano · Online</div>
+      <div class="pilar-freq"><span>4× ao ano · Online</span></div>
     </div>
 
     <div class="pilar">
@@ -1863,12 +1886,12 @@ footer {
       <div class="pilar-en">O Desbloqueio</div>
       <p class="pilar-desc">Traga seu maior gargalo. A mesa resolve em tempo real. Acesso à inteligência coletiva de 30 founders que elimina pontos cegos fatais antes que se tornem crises.</p>
       <ul class="pilar-items">
-        <li>Hot seat ao vivo com a mesa — problema real, solução real</li>
+        <li>Hot seat ao vivo com a mesa, problema real, solução real</li>
         <li>Inteligência coletiva de 30 founders AI-Native</li>
         <li>Eliminação de pontos cegos antes de virarem crises</li>
         <li>Velocidade de decisão comprimida de meses para horas</li>
       </ul>
-      <div class="pilar-freq">12× ao ano · Online</div>
+      <div class="pilar-freq"><span>12× ao ano · Online</span></div>
     </div>
 
     <div class="pilar">
@@ -1879,14 +1902,14 @@ footer {
       </div>
       <div class="pilar-h serif">AI Board<br>Advisor</div>
       <div class="pilar-en">A Verdade Fria</div>
-      <p class="pilar-desc">Acesso vitalício à tecnologia BAS + Hybria. Enquanto o board analisa o contexto humano, o agente de IA monitora seus dados e avisa onde você está perdendo dinheiro — antes da reunião.</p>
+      <p class="pilar-desc">Acesso vitalício à tecnologia BAS + Hybria. Enquanto o board analisa o contexto humano, o agente de IA monitora seus dados e avisa onde você está perdendo dinheiro, antes da reunião.</p>
       <ul class="pilar-items">
         <li>BAS: Business AI System · R$5k/mês × 3 áreas · contínuo 365 dias</li>
         <li>Hybria: Revenue Intelligence · 250 oportunidades/mês · R$4k/mês</li>
         <li>Alerta antecipado: IA identifica perda antes do board humano ver</li>
         <li>Dados em tempo real alimentando cada sessão trimestral</li>
       </ul>
-      <div class="pilar-freq">365 dias · Contínuo</div>
+      <div class="pilar-freq"><span>365 dias · Contínuo</span></div>
     </div>
   </div>
 </section>
@@ -1907,7 +1930,7 @@ footer {
         <div class="camada-body">
           <div class="camada-label">Camada 01 · Entrada</div>
           <div class="camada-name serif">Siberia Board Room</div>
-          <div class="camada-desc">Imersão presencial nacional. Você entra no board. Calibração de visão, alinhamento com os 30 founders e sessão inaugural com Vagner. Acontece 1× ao ingressar — e define o patamar de cada membro.</div>
+          <div class="camada-desc">Imersão presencial nacional. Você entra no board. Calibração de visão, alinhamento com os 30 founders e sessão inaugural com Vagner. Acontece 1× ao ingressar, e define o patamar de cada membro.</div>
         </div>
         <div class="camada-meta">
           <div class="camada-freq">1× ao ingressar</div>
@@ -1921,7 +1944,7 @@ footer {
         <div class="camada-body">
           <div class="camada-label">Camada 02 · Mensal</div>
           <div class="camada-name serif">Table of Future</div>
-          <div class="camada-desc">Hot seat online. Traga seu maior gargalo — a mesa resolve em tempo real. 12× ao ano com os 30 founders e Vagner. A inteligência coletiva que elimina pontos cegos antes que virem crises.</div>
+          <div class="camada-desc">Hot seat online. Traga seu maior gargalo, a mesa resolve em tempo real. 12× ao ano com os 30 founders e Vagner. A inteligência coletiva que elimina pontos cegos antes que virem crises.</div>
         </div>
         <div class="camada-meta">
           <div class="camada-freq">12× ao ano</div>
@@ -1949,7 +1972,7 @@ footer {
         <div class="camada-body">
           <div class="camada-label">Camada 04 · Presencial Global</div>
           <div class="camada-name serif">Future Summit</div>
-          <div class="camada-desc">Duas operações presenciais por ano. Brasil: extração de inteligência coletiva no contexto brasileiro. Inglaterra (Hinwick House): conclave blindado em solo britânico — foco em relevância, visão de futuro e legado. Um conclave. Dois mundos.</div>
+          <div class="camada-desc">Duas operações presenciais por ano. Brasil: extração de inteligência coletiva no contexto brasileiro. Inglaterra (Hinwick House): conclave blindado em solo britânico, foco em relevância, visão de futuro e legado. Um conclave. Dois mundos.</div>
         </div>
         <div class="camada-meta">
           <div class="camada-freq">2× ao ano</div>
@@ -1963,7 +1986,7 @@ footer {
         <div class="camada-body">
           <div class="camada-label">Camada 05 · Tecnologia Contínua</div>
           <div class="camada-name serif">AI Council</div>
-          <div class="camada-desc">BAS (Business AI System) operando 365 dias em 3 áreas da empresa — R$5.000/mês. Hybria em produção contínua — 250 oportunidades/mês — R$4.000/mês. O founder multiplicado em tecnologia enquanto o board humano governa a estratégia.</div>
+          <div class="camada-desc">BAS (Business AI System) operando 365 dias em 3 áreas da empresa. Hybria em produção contínua, 250 oportunidades/mês. O founder multiplicado em tecnologia enquanto o board humano governa a estratégia.</div>
         </div>
         <div class="camada-meta">
           <div class="camada-freq">365 dias</div>
@@ -1976,7 +1999,7 @@ footer {
 </div>
 
 <!-- 05 GLOBAL ACCESS -->
-<section id="global">
+<section id="global" class="section">
   <div class="section-label reveal">05 · Global Access Pass — O QG é o Mundo</div>
 
   <div class="reveal reveal-d1">
@@ -1993,11 +2016,11 @@ footer {
       <div class="ec-en serif">Brasil</div>
       <p class="ec-desc">Operação anual de alta intensidade em solo brasileiro. Foco em execução, velocidade e extração de inteligência coletiva no contexto do mercado brasileiro. Dois dias de imersão presencial com os 30 founders do ciclo e convidados de calibre equivalente.</p>
       <ul class="ec-includes">
-        <li>Ticket do Summit — presença obrigatória</li>
+        <li>Ticket do Summit, presença obrigatória</li>
         <li>Hospedagem · Alimentação · Experiências inclusas</li>
         <li>Extração de inteligência coletiva em contexto BR</li>
         <li>Acesso à rede de parceiros e investidores do ecossistema Siberia</li>
-        <li>Sessão de board ao vivo com Vagner — decisões presenciais</li>
+        <li>Sessão de board ao vivo com Vagner, decisões presenciais</li>
       </ul>
       <div class="ec-footnote serif">"Extração de inteligência na fonte. Em sala, com os pares certos."</div>
     </div>
@@ -2009,11 +2032,11 @@ footer {
       <div class="ec-subtitle">Legado e Visão de Futuro</div>
       <div class="ec-name serif">Future Summit</div>
       <div class="ec-en serif">Hinwick House · UK</div>
-      <p class="ec-desc">Um conclave blindado em solo britânico. Hinwick House — ambiente de Old Money que combina a solidez de séculos de tradição com a tecnologia do presente. Foco em visão de longo prazo, relevância global e legado.</p>
+      <p class="ec-desc">Um conclave blindado em solo britânico. Hinwick House, ambiente de Old Money que combina a solidez de séculos de tradição com a tecnologia do presente. Foco em visão de longo prazo, relevância global e legado.</p>
       <ul class="ec-includes">
-        <li>Ticket do Conclave Secreto — acesso restrito a membros</li>
+        <li>Ticket do Conclave Secreto, acesso restrito a membros</li>
         <li>Hospedagem de Luxo em Hinwick House · Alimentação inclusa</li>
-        <li>"Secret Experience UK" — agenda confidencial para membros</li>
+        <li>"Secret Experience UK", agenda confidencial para membros</li>
         <li>Acesso à inteligência global do ecossistema Siberia</li>
         <li>Apenas o aéreo é por conta do membro</li>
       </ul>
@@ -2031,11 +2054,11 @@ footer {
       <div class="nl-left reveal reveal-d1">
         <h2 class="serif">Negócios na velocidade<br>do <em>pensamento.</em></h2>
         <p>Lá fora, parcerias exigem meses de advogados e due diligence infinita. Aqui, o filtro já foi feito. O Vetting Protocol garante que quem senta ao seu lado tem a mesma ética, calibre e potência.</p>
-        <p>Não é networking. É acesso a inteligência que não está disponível para compra — está disponível apenas para quem foi aprovado.</p>
+        <p>Não é networking. É acesso a inteligência que não está disponível para compra, está disponível apenas para quem foi aprovado.</p>
         <p>Quando a conversa começa, a confiança já existe. O que levaria 10 anos de rede se comprime em 10 minutos de mesa.</p>
         <div class="nl-stat">
           <div class="nl-stat-n serif">30</div>
-          <div class="nl-stat-l">founders AI-Native aprovados por ciclo — cada um passando pelo Vetting Protocol</div>
+          <div class="nl-stat-l">founders AI-Native aprovados por ciclo, cada um passando pelo Vetting Protocol</div>
         </div>
       </div>
 
@@ -2060,7 +2083,7 @@ footer {
             <div class="vs-num">03</div>
             <div>
               <div class="vs-title serif">Entrevista de Conselho</div>
-              <div class="vs-desc">Reunião de alinhamento com Vagner. Fit cultural — não fit financeiro.</div>
+              <div class="vs-desc">Reunião de alinhamento com Vagner. Fit cultural, não fit financeiro.</div>
             </div>
           </div>
           <div class="vs">
@@ -2084,7 +2107,7 @@ footer {
 </div>
 
 <!-- 07 BONUS EDUCACIONAL -->
-<section>
+<section class="section">
   <div class="section-label reveal">07 · Bônus Estratégico — Preparar o Exército</div>
 
   <div class="reveal reveal-d1">
@@ -2104,15 +2127,40 @@ footer {
         <li>Formação do sucessor enquanto a empresa escala</li>
       </ul>
     </div>
+
     <div class="bonus-card dark">
-      <div class="bc-tag">Bônus 02 · Para Seus Líderes</div>
+      <div class="bc-tag">Bônus 02 · Para o Seu Líder</div>
       <div class="bc-h serif">MBA <em>Military-Grade AI Leadership</em></div>
-      <p class="bc-desc">Cadeiras no MBA para os líderes. Nós não esperamos que sua equipe "entenda" depois do War Room — nós a treinamos no mesmo padrão que você. O gap de linguagem fecha porque o exército fala o mesmo idioma que o general.</p>
+      <p class="bc-desc">Uma cadeira no MBA para um líder de operações. Nós não esperamos que sua equipe "entenda" depois do War Room, nós treinamos um, para que treine no mesmo padrão que você. O gap de linguagem fecha porque o exército fala o mesmo idioma que o general.</p>
       <ul class="bc-items">
         <li><strong>MBA Military-Grade AI Leadership</strong> — Chancela MEC</li>
-        <li>GTM AI Engineering — R$23.000</li>
-        <li>Productivity OS × 3 — R$12.000</li>
-        <li>3 líderes operando com agentes no mesmo ciclo</li>
+        <li>1 líder de operações treinado no mesmo padrão do founder</li>
+        <li>Alinhamento tático entre comando e execução</li>
+        <li>O general não traduz mais, o tenente já entende</li>
+      </ul>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bc-tag">Bônus 03 · Head de Receita</div>
+      <div class="bc-h serif">Extensão <em>GTM AI Engineering</em></div>
+      <p class="bc-desc">Uma cadeira para formar um head de escala com IA. Um profissional desse calibre custa mais de R$1.000.000 no mercado, é o responsável por sustentar toda a arquitetura de escala de receita da empresa. Você forma esse ativo internamente.</p>
+      <ul class="bc-items">
+        <li><strong>GTM AI Engineering</strong>, Extensão MEC · R$23.000</li>
+        <li>Head de escala formado com IA no centro da operação</li>
+        <li>Profissional que sustenta toda a arquitetura de receita</li>
+        <li>Custo de mercado: +R$1.000.000 · você forma internamente</li>
+      </ul>
+    </div>
+
+    <div class="bonus-card dark">
+      <div class="bc-tag">Bônus 04 · Nível Tático</div>
+      <div class="bc-h serif">Extensão <em>AI Productivity OS</em></div>
+      <p class="bc-desc">Mais 3 cadeiras para escalar a produtividade do seu time. O sistema operacional de produtividade com IA instalado na linha de frente, porque de nada adianta o general ter visão se o pelotão opera no manual antigo.</p>
+      <ul class="bc-items">
+        <li><strong>AI Productivity OS</strong>, Extensão MEC · R$12.000</li>
+        <li>3 cadeiras inclusas · para os líderes táticos que você indicar</li>
+        <li>Produtividade com agentes de IA na linha de execução</li>
+        <li>O exército inteiro opera com o mesmo sistema do general</li>
       </ul>
     </div>
   </div>
@@ -2193,10 +2241,15 @@ footer {
 </div>
 
 <!-- 09 ANCORA -->
-<section>
+<section class="section">
   <div class="section-label reveal">09 · Âncora de Valor — Stack Completo da Membership</div>
 
-  <div class="ancora-layout reveal reveal-d1">
+  <div class="reveal reveal-d1" style="margin-bottom:0;">
+    <h2 class="bonus-h serif" style="max-width:700px;margin-bottom:12px;">O custo de não ter<br><em>um board.</em></h2>
+    <p class="bonus-intro serif" style="margin-bottom:0;">Veja o que está incluído e o que você pagaria no mercado por cada peça.</p>
+  </div>
+
+  <div class="ancora-layout reveal reveal-d1" style="margin-top:52px;">
     <ul class="ancora-list">
       <li class="ancora-item"><span class="ai-name">Siberia Board Room · imersão presencial inaugural</span><span class="ai-val">R$45.000</span></li>
       <li class="ancora-item"><span class="ai-name">Table of Future · 12 Hot Seats anuais</span><span class="ai-val">R$50.000</span></li>
@@ -2240,7 +2293,7 @@ footer {
           <div class="vstep-num serif">01</div>
           <div class="vstep-body">
             <div class="vstep-title serif">Aplicação Tática</div>
-            <div class="vstep-desc">Preenchimento do Dossiê Empresarial completo. Números reais, estrutura real, desafio real. Não é um formulário de interesse — é um documento estratégico.</div>
+            <div class="vstep-desc">Preenchimento do Dossiê Empresarial completo. Números reais, estrutura real, desafio real. Não é um formulário de interesse, é um documento estratégico.</div>
           </div>
         </div>
         <div class="vstep">
@@ -2254,7 +2307,7 @@ footer {
           <div class="vstep-num serif">03</div>
           <div class="vstep-body">
             <div class="vstep-title serif">Entrevista de Conselho</div>
-            <div class="vstep-desc">Reunião de alinhamento cultural com Vagner Campos. Verificamos fit — não capacidade de pagar. O calibre da mesa depende do calibre de cada membro.</div>
+            <div class="vstep-desc">Reunião de alinhamento cultural com Vagner Campos. Verificamos fit, não capacidade de pagar. O calibre da mesa depende do calibre de cada membro.</div>
           </div>
         </div>
         <div class="vstep">
@@ -2303,8 +2356,11 @@ footer {
 </div>
 
 <!-- 11 FAQ -->
-<section>
+<section class="section">
   <div class="section-label reveal">11 · Perguntas do Conselho</div>
+
+  <h2 class="bonus-h serif reveal reveal-d1" style="max-width:640px;margin-bottom:12px;">As dúvidas que ficam<br><em>antes da decisão.</em></h2>
+  <p class="bonus-intro serif reveal reveal-d2" style="margin-bottom:0;">Respondemos as objeções que o board real levantaria.</p>
 
   <div class="faq-list reveal reveal-d1">
     <div class="faq-item">
@@ -2379,7 +2435,7 @@ footer {
       <em>Não governe sozinho.</em>
     </h2>
     <p class="cf-sub serif reveal reveal-d2">
-      O board que você sempre precisou — com a tecnologia que o mercado ainda não viu.<br>
+      O board que você sempre precisou, com a tecnologia que o mercado ainda não viu.<br>
       30 founders. Uma mesa. Nenhuma decisão tomada no escuro.
     </p>
     <div class="cf-actions reveal reveal-d3">
